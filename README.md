@@ -19,6 +19,8 @@ DataDock is a comprehensive desktop application developed in C++ using the Qt fr
 * Python 3.8+ with pip (for the FaceID module)
 * Arduino IDE (for flashing code to Arduino/ESP32 boards)
 
+please read `REQUIREMENTS.txt`
+
 ## Installation & Running
 
 ### 1. Main Application (C++ Qt)
@@ -36,9 +38,17 @@ make
 ./DataDock
 ```
 
-### 2. Artificial Intelligence Modules
+### 2. DataBase
 
-Model download link: [Download Model](https://huggingface.co/AdamRh/faceid/tree/main)
+The SQL script required to create and initialize the database is available in:
+
+`standardize_db.sql`
+
+Run this script on your Oracle database before starting the application.
+
+### 3. Artificial Intelligence Modules
+
+faceid Model download link: [Download Model](https://huggingface.co/AdamRh/faceid/tree/main)
 
 Once downloaded, place the model inside the `faceidd/models` directory.
 
@@ -61,7 +71,19 @@ pip install -r requirements.txt
 
 please read `faceidd/README.md` for more information.
 
-### 3. Embedded & IoT Module (Arduino)
+logistique Model download link: [Download Model](https://huggingface.co/AdamRh/ai_operations_predictor/tree/main)
+
+Once downloaded, place the model inside the `gestion_logistique/ai_operations_predictor/model` directory.
+
+To install the logistique module dependencies:
+```bash
+cd gestion_logistique/ai_operations_predictor
+
+pip install -r requirements.txt
+
+```
+
+### 4. Embedded & IoT Module (Arduino)
 
 The board source code files are located in the project root:
 
