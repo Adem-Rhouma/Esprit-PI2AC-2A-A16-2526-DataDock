@@ -1,112 +1,89 @@
-# Nom du projet
-**DataDock**
+# DataDock - Smart Fishing Port Management Platform
 
-## Description
-DataDock is a comprehensive desktop application developed in C++ using the Qt framework for managing a smart fishing port. The system integrates various hardware components (IoT via Arduino), such as automated barriers, as well as Artificial Intelligence (Machine Learning) for face recognition (`faceidd`) and predictive analytics, providing an all-in-one management platform.
+## Application Overview
 
-## Technologies utilisées
-**Frontend / Backend:** Qt 6 (C++17)
-**Database:** Oracle
-**Embedded / IoT:** Arduino (C++)
-**Artificial Intelligence:** Python (Machine Learning, Face Recognition)
+DataDock is an integrated desktop management solution designed for modern smart fishing ports. The application unifies all operational aspects of port management into a single platform, leveraging Qt 6 for the user interface, Oracle for data persistence, Arduino for IoT connectivity, and Python-based AI services for intelligent decision-making.
 
-## Prérequis
-- Desktop Qt 6+
-- C++17
-- python 3.10+
-- Oracle 11g XE
-- Arduino IDE
+## Core Functional Modules
 
-## Installation
-### 1. Main Application (C++ Qt)
+### 1. Employee Management
+- **Employee Registry**: Complete CRUD operations for staff records
+- **Role-Based Access**: Admin, Agent, HR, Driver, and Fisher roles with distinct permissions
+- **Biometric Integration**: Face recognition enrollment using OpenCV YuNet/SFace models
+- **Document Generation**: Automated work certificate and regulation PDF exports
+- **RFID Access Control**: Hardware-integrated entry permissions with real-time validation
 
-Open the `DataDock.pro` file in Qt Creator.
+### 2. Fishing Operations
+- **Catch Lot Management**: Registration and tracking of fishing lots by species and quantity
+- **Dynamic Pricing**: AI-powered price recommendations via Gemini API based on market conditions
+- **Market Intelligence**: Sales recommendations, freshness monitoring, and anomaly detection
+- **Traceability**: QR-code enabled fish batch tracking from catch to sale
+- **Historical Analytics**: Statistics dashboard with trend visualization
 
-Configure the project with the appropriate kit (Desktop Qt 5 or 6), then build and run it (`Ctrl + R`).
+### 3. Vessel Management
+- **Vessel Registry**: Ship registration with operational status monitoring
+- **Weather Integration**: Real-time meteorological data for departure/arrival planning
+- **Predictive Maintenance**: Schedule-based maintenance with Gantt chart visualization
+- **Maintenance Alerts**: Automated notifications based on operational hours and conditions
 
-### 2. DataBase
+### 4. Cold Storage (Chambres Froides)
+- **Inventory Tracking**: Temperature and humidity monitoring for each cold room
+- **Smart Allocation**: AI-optimized fish batch distribution using OR-Tools constraint solver
+- **RFID/NFC Tagging**: Automated inventory identification and traceability
+- **Alert Center**: Centralized view of storage anomalies and quality issues
 
-The SQL script required to create and initialize the database is available in:
+### 5. Logistics & Transport
+- **Fleet Management**: Refrigerated truck registration with capacity and load tracking
+- **RFID Gate Control**: Automated truck entry/exit via Arduino-connected barriers
+- **Activity Logging**: Complete history of truck movements with timestamps
+- **Predictive Analytics**: 90-day operation forecasting using CatBoost ML model
+- **Geographic View**: Interactive map showing truck positioning and routes
 
-`standardize_db.sql`
+### 6. Equipment Management
+- **Asset Inventory**: Equipment catalog with maintenance scheduling
+- **IoT Monitoring**: Real-time sensor data integration for critical assets
 
-Run this script on your Oracle database before starting the application.
+## Technology Stack
 
-### 3. Artificial Intelligence Modules
+| Layer | Technology |
+|-------|------------|
+| Frontend/UI | Qt 6 (C++17) |
+| Backend | Qt/C++ with Oracle QSqlDatabase |
+| Database | Oracle 11g XE |
+| AI Services | Python 3.10+ (Flask, OpenCV, CatBoost, OR-Tools) |
+| IoT Integration | Arduino (C++), Qt SerialPort |
 
-faceid Model download link: [Download Model](https://huggingface.co/AdamRh/faceid/tree/main)
+## Installation Prerequisites
 
-Once downloaded, place the model inside the `faceidd/models` directory.
+- Qt 6+ development environment
+- C++17 compatible compiler
+- Python 3.10+ with pip
+- Oracle 11g XE database
+- Arduino IDE 1.8+
 
-To install the ML module dependencies:
-```bash
-cd faceidd
+## Quick Start
 
-python -m venv venv
+1. **Database Setup**: Execute `standardize_db.sql` on Oracle
+2. **Build Application**: Open `DataDock.pro` in Qt Creator and build
+3. **AI Services**: Install Python dependencies and download ML models
+4. **IoT Setup**: Flash `arduinoprojetqt.ino` and `barrier_auto.ino` to Arduino boards
+5. **Launch**: Run from Qt Creator (`Ctrl+R`)
 
-source venv/bin/activate
+## Documentation
 
-venv\Scripts\activate
+- System regulation PDF: Available via Employee module
+- Hardware wiring guide: `docs/liste-materiel.md`
+- Face recognition API: `faceidd/README.md`
 
-pip install -r requirements.txt
+## Development Team
 
-cd ../gestion_chambres_froides/ai_engine
+| Developer | Class | Year |
+|-----------|-------|------|
+| Adam Rhouma | 2A16 | 2526 |
+| Emna Ben Othman | 2A16 | 2526 |
+| Youssef Ben Hariz | 2A16 | 2526 |
+| Yassine Benzid | 2A16 | 2526 |
+| Farah Mejeldi | 2A16 | 2526 |
+| Ribel Ben Abdallah | 2A16 | 2526 |
 
-pip install -r requirements.txt
-```
-
-please read `faceidd/README.md` for more information.
-
-logistique Model download link: [Download Model](https://huggingface.co/AdamRh/ai_operations_predictor/tree/main)
-
-Once downloaded, place the model inside the `gestion_logistique/ai_operations_predictor/model` directory.
-
-To install the logistique module dependencies:
-```bash
-cd gestion_logistique/ai_operations_predictor
-
-pip install -r requirements.txt
-
-```
-
-### 4. Embedded & IoT Module (Arduino)
-
-The board source code files are located in the project root:
-
-* `arduinoprojetqt.ino`
-* `barrier_auto.ino`
-
-Use the Arduino IDE to upload the code:
-
-1. Open the `.ino` file in Arduino IDE.
-2. Verify/compile the code.
-3. Upload it to the connected board.
-
-
-### 5. Hardware & Wiring (IoT)
-
-* **[Bill of Materials (BOM)](docs/liste-materiel.md)**
-
-
-## Lancement
-Open the `DataDock.pro` file in Qt Creator.
-
-Desktop Qt 6 Run `Ctrl + R`.
-
-## Variables d'environnement
-
-create `.env` file.
-See the `.env.example` file for the required environment variables.
-
-## Démo
-Vidéo : https://...
-Déploiement : https://...
-
-## Auteurs
-Nom — Classe — Année — Tuteur :
-Adam Rhouma _ 2A16 _ 2526 _ Mme Houde Jouini
-Emna Ben Othman _ 2A16 _ 2526 _ Mme Houde Jouini
-Youssef Ben Hariz _ 2A16 _ 2526 _ Mme Houde Jouini
-Yassine Benzid _ 2A16 _ 2526 _ Mme Houde Jouini
-Farah Mejeldi _ 2A16 _ 2526 _ Mme Houde Jouini
-Ribel Ben Abdallah _ 2A16 _ 2526 _ Mme Houde Jouini
+*Supervised by: Mme Houde Jouini*
