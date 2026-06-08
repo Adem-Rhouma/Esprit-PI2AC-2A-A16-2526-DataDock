@@ -166,7 +166,7 @@ PecheSmartServicesPage::PecheSmartServicesPage(QWidget *parent)
     setAttribute(Qt::WA_StyledBackground, true);
     setObjectName("PecheSmartServicesPage");
     
-    QFile qssFile("c:/Users/moonm/OneDrive/Desktop/2a16-smart-fishing-port-management/gestion_peche/assets/qss/peche_smartservices.qss");
+    QFile qssFile("gestion_peche/assets/qss/peche_smartservices.qss");
     if (!qssFile.exists()) {
         qssFile.setFileName("gestion_peche/assets/qss/peche_smartservices.qss");
     }

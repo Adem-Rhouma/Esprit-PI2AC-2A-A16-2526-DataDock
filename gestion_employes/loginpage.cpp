@@ -329,7 +329,7 @@ void LoginPage::onFaceIdClicked()
     camera->start();
 
     const QString desktopPath = QStandardPaths::writableLocation(QStandardPaths::DesktopLocation);
-    const QString usersDirPath = desktopPath + "/DataDock/2a16-smart-fishing-port-management/assets/users";
+    const QString usersDirPath = desktopPath + "/DataDock/Esprit-PI2AC-2A-A16-2526-DataDock/assets/users";
     QDir().mkpath(usersDirPath);
     const QString path = usersDirPath + "/face.jpg";
 

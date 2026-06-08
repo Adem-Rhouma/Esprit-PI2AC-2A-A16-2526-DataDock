@@ -1,42 +1,28 @@
-# Smart Fishing Port Management (DataDock)
+# Nom du projet
+**DataDock**
 
 ## Description
-
 DataDock is a comprehensive desktop application developed in C++ using the Qt framework for managing a smart fishing port. The system integrates various hardware components (IoT via Arduino), such as automated barriers, as well as Artificial Intelligence (Machine Learning) for face recognition (`faceidd`) and predictive analytics, providing an all-in-one management platform.
 
-## Technologies Used
+## Technologies utilisées
+**Frontend / Backend:** Qt 6 (C++17)
+**Database:** Oracle
+**Embedded / IoT:** Arduino (C++)
+**Artificial Intelligence:** Python (Machine Learning, Face Recognition)
 
-* **Frontend / Backend:** C++ (Qt 6)
-* **Embedded / IoT:** Arduino (C++)
-* **Artificial Intelligence:** Python (Machine Learning, Face Recognition)
-* **Database:** Oracle
+## Prérequis
+- Desktop Qt 6+
+- C++17
+- python 3.10+
+- Oracle 11g XE
+- Arduino IDE
 
-## Prerequisites
-
-* OS: Windows 10+ or Linux (Ubuntu 20.04+)
-* Compiler: g++ 11+ or MSVC 2022
-* Framework: Qt 5.15+ or Qt 6+ with Qt Creator
-* Python 3.8+ with pip (for the FaceID module)
-* Arduino IDE (for flashing code to Arduino/ESP32 boards)
-
-please read `REQUIREMENTS.txt`
-
-## Installation & Running
-
+## Installation
 ### 1. Main Application (C++ Qt)
 
 Open the `DataDock.pro` file in Qt Creator.
 
 Configure the project with the appropriate kit (Desktop Qt 5 or 6), then build and run it (`Ctrl + R`).
-
-To compile from the command line:
-
-```bash
-mkdir build && cd build
-qmake ../DataDock.pro
-make
-./DataDock
-```
 
 ### 2. DataBase
 
@@ -96,14 +82,31 @@ Use the Arduino IDE to upload the code:
 2. Verify/compile the code.
 3. Upload it to the connected board.
 
-## Environment Variables
 
-See the `.env` file for the required environment variables.
-
-## Hardware & Wiring (IoT)
+### 5. Hardware & Wiring (IoT)
 
 * **[Bill of Materials (BOM)](docs/liste-materiel.md)**
 
-## Authors
 
-[Vortex Team]
+## Lancement
+Open the `DataDock.pro` file in Qt Creator.
+
+Desktop Qt 6 Run `Ctrl + R`.
+
+## Variables d'environnement
+
+create `.env` file.
+See the `.env.example` file for the required environment variables.
+
+## Démo
+Vidéo : https://...
+Déploiement : https://...
+
+## Auteurs
+Nom — Classe — Année — Tuteur :
+Adam Rhouma _ 2A16 _ 2526 _ Mme Houde Jouini
+Emna Ben Othman _ 2A16 _ 2526 _ Mme Houde Jouini
+Youssef Ben Hariz _ 2A16 _ 2526 _ Mme Houde Jouini
+Yassine Benzid _ 2A16 _ 2526 _ Mme Houde Jouini
+Farah Mejeldi _ 2A16 _ 2526 _ Mme Houde Jouini
+Ribel Ben Abdallah _ 2A16 _ 2526 _ Mme Houde Jouini

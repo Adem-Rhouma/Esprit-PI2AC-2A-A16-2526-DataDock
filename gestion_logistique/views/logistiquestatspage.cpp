@@ -672,16 +672,28 @@ void LogistiqueStatsPage::updatePredictions()
     
     static QString cachedPythonPath;
     if (cachedPythonPath.isEmpty()) {
-        // Broad search: System PATH + Common User-specific installation paths
-        QStringList pythonCandidates = {
-            "python3", "python", "python.exe", "python3.exe",
-            // Direct paths for Miniconda (User default)
-            QDir::homePath() + "/miniconda3/bin/python",
-            QDir::homePath() + "/miniconda3/python.exe",
-            QDir::homePath() + "/anaconda3/bin/python",
-            "C:/ProgramData/Anaconda3/python.exe"
-        };
-        
+        const QString customPython = QString::fromLocal8Bit(qgetenv("DATA_DOCK_PYTHON"));
+        QDir appDir(QCoreApplication::applicationDirPath());
+
+        QStringList pythonCandidates;
+        if (!customPython.isEmpty()) {
+            pythonCandidates << customPython;
+        }
+        pythonCandidates << "python3" << "python" << "python.exe" << "python3.exe";
+
+        QDir searchDir(appDir);
+        for (int i = 0; i < 6; ++i) {
+            pythonCandidates << searchDir.absoluteFilePath("venv/bin/python");
+            pythonCandidates << searchDir.absoluteFilePath("venv/bin/python3");
+            pythonCandidates << searchDir.absoluteFilePath("venv/Scripts/python.exe");
+            if (!searchDir.cdUp()) break;
+        }
+
+        pythonCandidates << QDir::currentPath() + "/venv/bin/python";
+        pythonCandidates << QDir::currentPath() + "/venv/Scripts/python.exe";
+        pythonCandidates << QDir::homePath() + "/.local/bin/python";
+        pythonCandidates << QDir::homePath() + "/.local/bin/python3";
+
         for (const QString &cmd : pythonCandidates) {
             #ifdef Q_OS_WIN
                 // Skip non-Windows paths on Windows and vice versa if needed

@@ -21,7 +21,7 @@ int mailer::sendEmail(QString dist, QString obj, QString bdy, QString name)
         int smtpPort = smtpPortStr.isEmpty() ? 465 : smtpPortStr.toInt();
         
         QString username = QString::fromLocal8Bit(qgetenv("SMTP_USER"));
-        if (username.isEmpty()) username = "farahmejeldi2@gmail.com";
+        if (username.isEmpty()) username = "example@gmail.com";
         
         QString password = QString::fromLocal8Bit(qgetenv("SMTP_PASSWORD"));
         if (password.isEmpty()) password = "your_password_here";

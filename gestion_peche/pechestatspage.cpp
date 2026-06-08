@@ -1162,8 +1162,17 @@ void PecheStatsPage::showFullHistoryDialog()
     QDialog dialog(this);
     dialog.setWindowTitle(tr("Historique complet des lots"));
     dialog.resize(980, 620);
-    dialog.setStyleSheet(QStringLiteral(
-        "QDialog { border-image: url(\"C:/Users/moonm/OneDrive/Desktop/2a16-smart-fishing-port-management/assets/img/winbg.png\") 0 0 0 0 stretch stretch; }"
+
+    const QString bgPath = resolveIconPath("assets/img/winbg.png");
+    const QString bgUrl = QFile::exists(bgPath) ? bgPath.replace('\\', '/') : QString();
+    QString dialogStyle;
+    if (!bgUrl.isEmpty()) {
+        dialogStyle = QStringLiteral("QDialog { border-image: url(\"%1\") 0 0 0 0 stretch stretch; }")
+            .arg(bgUrl);
+    } else {
+        dialogStyle = QStringLiteral("QDialog { background-color: #0b1220; }");
+    }
+    dialogStyle += QStringLiteral(
         "QLabel#dialogTitle { font-size:24px; font-weight:700; color:#FFFFFF; }"
         "QLabel#dialogSubtitle { font-size:13px; color:#E0E5FF; }"
         "QPushButton { background:#0FA5A5; color:#FFFFFF; border:none; border-radius:10px; padding:10px 18px; font-weight: 700; }"
@@ -1172,7 +1181,8 @@ void PecheStatsPage::showFullHistoryDialog()
         "QTableWidget { background:#FFFFFF; border:1px solid #D8E1EA; border-radius:14px; }"
         "QHeaderView::section { background:#0B1A2E; color:#FFFFFF; padding:10px; border:none; font-weight: 700; }"
         "QTableWidget::item { padding:8px; border-bottom:1px solid #EEF2F6; }"
-        "QTableWidget::item:selected { background:#E6F7F7; color:#0B1A2E; }"));
+        "QTableWidget::item:selected { background:#E6F7F7; color:#0B1A2E; }");
+    dialog.setStyleSheet(dialogStyle);
 
     auto *layout = new QVBoxLayout(&dialog);
     layout->setContentsMargins(22, 22, 22, 22);

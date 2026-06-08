@@ -293,7 +293,13 @@ void EmployesPage::on_ajouterr_clicked() // Bouton Ajouter dans GPAJOUT
     QString mdp = ui->lineEdit_11->text();
     QString role = ui->comboBox_3->currentText();
 
-    QString photo = "C:/photos/" + nom.toLower() + ".png";
+    QString photoFolder;
+#ifdef Q_OS_WIN
+    photoFolder = "C:/photos";
+#else
+    photoFolder = QDir::homePath() + "/Pictures";
+#endif
+    QString photo = QDir(photoFolder).filePath(nom.toLower() + ".png");
 
     Employe E(id, nom, prenom, role, email, mdp, photo);
 
@@ -375,7 +381,7 @@ void EmployesPage::on_ajouterr_clicked() // Bouton Ajouter dans GPAJOUT
     session->setImageCapture(imageCapture);
 
     const QString desktopPath = QStandardPaths::writableLocation(QStandardPaths::DesktopLocation);
-    const QString usersDirPath = desktopPath + "/DataDock/2a16-smart-fishing-port-management/assets/users";
+    const QString usersDirPath = desktopPath + "/DataDock/Esprit-PI2AC-2A-A16-2526-DataDock/assets/users";
     QDir().mkpath(usersDirPath);
     const QString path = usersDirPath + "/capture.jpg";
 

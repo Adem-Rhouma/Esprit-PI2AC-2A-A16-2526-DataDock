@@ -23,9 +23,17 @@ void PecheBaseDialog::paintEvent(QPaintEvent *event)
     QPainter painter(this);
     painter.setRenderHint(QPainter::SmoothPixmapTransform);
 
-    // Load background image
-    // The user provided the precise path
-    QPixmap bkgnd("C:/Users/moonm/OneDrive/Desktop/2a16-smart-fishing-port-management/assets/img/winbg.png");
+    // Load background image using a relative path from the executable directory
+    QDir appDir(QCoreApplication::applicationDirPath());
+    QString imagePath = appDir.filePath("../assets/img/winbg.png");
+    if (!QDir::exists(imagePath)) {
+        imagePath = appDir.filePath("assets/img/winbg.png");
+    }
+    if (!QDir::exists(imagePath)) {
+        imagePath = appDir.filePath("../../assets/img/winbg.png");
+    }
+
+    QPixmap bkgnd(imagePath);
     
     if (!bkgnd.isNull()) {
         // Scale to fill the background, keeping aspect ratio by expanding to avoid stretching
