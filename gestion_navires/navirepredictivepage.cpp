@@ -10,6 +10,8 @@
 #include <QtCharts/QLineSeries>
 #include <QtCharts/QValueAxis>
 #include <QtCharts/QCategoryAxis>
+#include <QFile>
+#include <QStandardPaths>
 
 NavirePredictivePage::NavirePredictivePage(int shipId, QWidget *parent) :
     QWidget(parent),
@@ -64,7 +66,25 @@ void NavirePredictivePage::runPrediction() {
     // Paths are resolved relative to the project source tree via the
     // NAVIRES_SCRIPTS_DIR macro defined in DataDock.pro (= <project>/gestion_navires/scripts)
     const QString scriptsDir    = QString(NAVIRES_SCRIPTS_DIR);
-    const QString pythonPath    = scriptsDir + "/venv/bin/python3";
+    // Prefer the '@venv' environment if present, otherwise fall back to 'venv', then system python3
+    QString pythonPath;
+    const QStringList candidates = {
+        scriptsDir + "/venv/bin/python",
+        scriptsDir + "/venv/bin/python3"
+    };
+    for (const QString &cand : candidates) {
+        if (QFile::exists(cand)) { pythonPath = cand; break; }
+    }
+    if (pythonPath.isEmpty()) {
+        // Try system python3 in PATH
+        QString sys = QStandardPaths::findExecutable("python3");
+        if (!sys.isEmpty()) pythonPath = sys;
+    }
+    if (pythonPath.isEmpty()) {
+        ui->lblMaintValue->setText("Python introuvable");
+        ui->lblSuggestions->setText("Vérifiez l'environnement @venv/venv ou installez python3.");
+        return;
+    }
     const QString regressorScript = scriptsDir + "/numerical_regressor.py";
     const QString classifierScript = scriptsDir + "/symptom_classifier.py";
 

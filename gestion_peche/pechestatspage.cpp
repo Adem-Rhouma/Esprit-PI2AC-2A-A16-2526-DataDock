@@ -180,9 +180,9 @@ QString resolveDisplayName(const QString &table,
 QString statusExprSql(const QString &alias)
 {
     return QStringLiteral(
-        "TRIM(CASE WHEN INSTR(NVL(%1.DESCRIPTION,''),'|') > 0 "
-        "THEN SUBSTR(NVL(%1.DESCRIPTION,''), 1, INSTR(NVL(%1.DESCRIPTION,''),'|')-1) "
-        "ELSE NVL(%1.DESCRIPTION,'') END)").arg(alias);
+               "TRIM(CASE WHEN INSTR(NVL(%1.DESCRIPTION,''),'|') > 0 "
+               "THEN SUBSTR(NVL(%1.DESCRIPTION,''), 1, INSTR(NVL(%1.DESCRIPTION,''),'|')-1) "
+               "ELSE NVL(%1.DESCRIPTION,'') END)").arg(alias);
 }
 
 QString statusFromDescription(const QString &description)
@@ -884,15 +884,15 @@ void PecheStatsPage::refreshKpis()
         { { ":start", prevStart }, { ":end", prevEnd } });
 
     const double monthTonnes = queryDouble(
-        "SELECT NVL(SUM(E.QUANTITE), 0) "
-        "FROM PECHES P LEFT JOIN PECHESESPECES E ON E.IDPECHE = P.IDPECHE "
-        "WHERE NVL(P.IS_ARCHIVED, 0) = 0 AND P.DATEPECHE >= :start AND P.DATEPECHE < :end",
-        { { ":start", periodStart }, { ":end", periodEnd } }) / 1000.0;
+                                   "SELECT NVL(SUM(E.QUANTITE), 0) "
+                                   "FROM PECHES P LEFT JOIN PECHESESPECES E ON E.IDPECHE = P.IDPECHE "
+                                   "WHERE NVL(P.IS_ARCHIVED, 0) = 0 AND P.DATEPECHE >= :start AND P.DATEPECHE < :end",
+                                   { { ":start", periodStart }, { ":end", periodEnd } }) / 1000.0;
     const double prevTonnes = queryDouble(
-        "SELECT NVL(SUM(E.QUANTITE), 0) "
-        "FROM PECHES P LEFT JOIN PECHESESPECES E ON E.IDPECHE = P.IDPECHE "
-        "WHERE NVL(P.IS_ARCHIVED, 0) = 0 AND P.DATEPECHE >= :start AND P.DATEPECHE < :end",
-        { { ":start", prevStart }, { ":end", prevEnd } }) / 1000.0;
+                                  "SELECT NVL(SUM(E.QUANTITE), 0) "
+                                  "FROM PECHES P LEFT JOIN PECHESESPECES E ON E.IDPECHE = P.IDPECHE "
+                                  "WHERE NVL(P.IS_ARCHIVED, 0) = 0 AND P.DATEPECHE >= :start AND P.DATEPECHE < :end",
+                                  { { ":start", prevStart }, { ":end", prevEnd } }) / 1000.0;
 
     auto styleBadge = [](QLabel* lbl, double current, double previous) {
         if (!lbl) return;
@@ -962,7 +962,7 @@ void PecheStatsPage::refreshDonutChart()
 
     const QString statusExpr = statusExprSql("P");
     QSqlQuery q;
-    
+
     // Filter donut by date
     const QDate today = QDate::currentDate();
     const QDate monthStart(today.year(), today.month(), 1);
@@ -970,9 +970,9 @@ void PecheStatsPage::refreshDonutChart()
     const QDate periodEnd = monthStart.addMonths(1);
 
     q.prepare(QStringLiteral(
-        "SELECT UPPER(%1) AS STATUT, COUNT(*) AS CNT "
-        "FROM PECHES P WHERE NVL(P.IS_ARCHIVED, 0) = 0 AND P.DATEPECHE >= :start AND P.DATEPECHE < :end "
-        "GROUP BY UPPER(%1)").arg(statusExpr));
+                  "SELECT UPPER(%1) AS STATUT, COUNT(*) AS CNT "
+                  "FROM PECHES P WHERE NVL(P.IS_ARCHIVED, 0) = 0 AND P.DATEPECHE >= :start AND P.DATEPECHE < :end "
+                  "GROUP BY UPPER(%1)").arg(statusExpr));
     q.bindValue(":start", periodStart);
     q.bindValue(":end", periodEnd);
 
@@ -1009,9 +1009,9 @@ void PecheStatsPage::refreshBarChart()
                   "FROM PECHESESPECES GROUP BY IDESPECE ORDER BY Q DESC";
     } else {
         baseSql = QStringLiteral(
-            "SELECT E.IDESPECE, S.%1, SUM(E.QUANTITE) AS Q "
-            "FROM PECHESESPECES E JOIN ESPECES S ON S.IDESPECE = E.IDESPECE "
-            "GROUP BY E.IDESPECE, S.%1 ORDER BY Q DESC").arg(nameColumn);
+                      "SELECT E.IDESPECE, S.%1, SUM(E.QUANTITE) AS Q "
+                      "FROM PECHESESPECES E JOIN ESPECES S ON S.IDESPECE = E.IDESPECE "
+                      "GROUP BY E.IDESPECE, S.%1 ORDER BY Q DESC").arg(nameColumn);
     }
 
     QSqlQuery q;
@@ -1075,13 +1075,13 @@ void PecheStatsPage::refreshBottomChart()
     const QString statusExpr = statusExprSql("P");
     QSqlQuery q;
     q.prepare(QStringLiteral(
-        "SELECT EXTRACT(YEAR FROM P.DATEPECHE) AS Y, "
-        "EXTRACT(MONTH FROM P.DATEPECHE) AS M, "
-        "UPPER(%1) AS STATUT, NVL(SUM(E.QUANTITE), 0) AS Q "
-        "FROM PECHES P LEFT JOIN PECHESESPECES E ON E.IDPECHE = P.IDPECHE "
-        "WHERE NVL(P.IS_ARCHIVED, 0) = 0 AND P.DATEPECHE >= :start AND P.DATEPECHE < :end "
-        "GROUP BY EXTRACT(YEAR FROM P.DATEPECHE), EXTRACT(MONTH FROM P.DATEPECHE), UPPER(%1)")
-              .arg(statusExpr));
+                  "SELECT EXTRACT(YEAR FROM P.DATEPECHE) AS Y, "
+                  "EXTRACT(MONTH FROM P.DATEPECHE) AS M, "
+                  "UPPER(%1) AS STATUT, NVL(SUM(E.QUANTITE), 0) AS Q "
+                  "FROM PECHES P LEFT JOIN PECHESESPECES E ON E.IDPECHE = P.IDPECHE "
+                  "WHERE NVL(P.IS_ARCHIVED, 0) = 0 AND P.DATEPECHE >= :start AND P.DATEPECHE < :end "
+                  "GROUP BY EXTRACT(YEAR FROM P.DATEPECHE), EXTRACT(MONTH FROM P.DATEPECHE), UPPER(%1)")
+                  .arg(statusExpr));
     q.bindValue(":start", startMonth);
     q.bindValue(":end", endMonth);
 
@@ -1163,12 +1163,16 @@ void PecheStatsPage::showFullHistoryDialog()
     dialog.setWindowTitle(tr("Historique complet des lots"));
     dialog.resize(980, 620);
 
-    const QString bgPath = resolveIconPath("assets/img/winbg.png");
-    const QString bgUrl = QFile::exists(bgPath) ? bgPath.replace('\\', '/') : QString();
+    const QString bgPath = resolveIconPath("assets/winbg.png");
+    QString bgUrl;
+    if (QFile::exists(bgPath)) {
+        bgUrl = bgPath;
+        bgUrl.replace('\\', '/');
+    }
     QString dialogStyle;
     if (!bgUrl.isEmpty()) {
         dialogStyle = QStringLiteral("QDialog { border-image: url(\"%1\") 0 0 0 0 stretch stretch; }")
-            .arg(bgUrl);
+        .arg(bgUrl);
     } else {
         dialogStyle = QStringLiteral("QDialog { background-color: #0b1220; }");
     }
@@ -1231,11 +1235,11 @@ void PecheStatsPage::onFilterClicked()
 {
     // Toggle active filter (1 month, 3 months, 6 months)
     QMenu menu(this);
-    
+
     QAction *a1 = menu.addAction(tr("Ce mois"));
     a1->setCheckable(true);
     a1->setChecked(m_monthsFilter == 1);
-    
+
     QAction *a3 = menu.addAction(tr("3 derniers mois"));
     a3->setCheckable(true);
     a3->setChecked(m_monthsFilter == 3);
@@ -1272,8 +1276,8 @@ void PecheStatsPage::onExportClicked()
         return;
     }
 
-    QString fileName = QFileDialog::getSaveFileName(this, tr("Exporter les données"), 
-                                                    "export_activite_peche.csv", 
+    QString fileName = QFileDialog::getSaveFileName(this, tr("Exporter les données"),
+                                                    "export_activite_peche.csv",
                                                     tr("Fichier CSV (*.csv)"));
     if (fileName.isEmpty()) {
         return;
@@ -1308,10 +1312,9 @@ void PecheStatsPage::onExportClicked()
 
 void PecheStatsPage::onVoirPlusClicked()
 {
-    QMessageBox::information(this, tr("Activité Récente"), 
+    QMessageBox::information(this, tr("Activité Récente"),
                              tr("Affichage complet de l'historique non disponible dans la vue Dashboard.\nVeuillez consulter le journal principal pour voir tous les lots."));
 }
-
 
 
 

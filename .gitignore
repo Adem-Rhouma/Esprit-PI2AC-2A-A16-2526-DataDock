@@ -45,3 +45,8 @@ predictions_3months.json
 operations_camions.csv
 faceidd/models/
 faceidd/venv/
+*.cbm
+
+#Python Environment
+
+venv/*
