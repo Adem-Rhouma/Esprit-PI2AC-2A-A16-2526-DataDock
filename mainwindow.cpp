@@ -48,9 +48,6 @@ MainWindow::MainWindow(QWidget *parent)
     ui->layoutCorps->setStretch(0, 0);
     ui->layoutCorps->setStretch(1, 1);
 
-    ui->topBar->setAttribute(Qt::WA_StyledBackground, true);
-    ui->sidebar->setAttribute(Qt::WA_StyledBackground, true);
-
     // Paint bg.png via paintEvent (see below). Make every widget layer
     // between MainWindow and the page content transparent so the image
     // shows through.  WA_NoSystemBackground + setAutoFillBackground(false)
@@ -571,10 +568,7 @@ void MainWindow::setupNavigation()
         });
     }
 
-    if (ui->LogistiqueSubmenu) {
-        LogistiqueSubmenuVisible = false;
-        ui->LogistiqueSubmenu->setVisible(false);
-    }
+    LogistiqueSubmenuVisible = false;
 
     if (ui->btnSidebarLogistique) {
         ui->btnSidebarLogistique->setCheckable(true);
@@ -620,35 +614,11 @@ void MainWindow::setupNavigation()
         });
     }
 
-    // Dynamically created buttons for Efficiency and Activity (added to submenu layout)
-    if (ui->LogistiqueSubmenu && ui->LogistiqueSubmenu->layout()) {
-        auto *btnEfficiency = new QPushButton("Éco & Maintenance", ui->LogistiqueSubmenu);
-        btnEfficiency->setObjectName("btnSidebarLogistiqueEfficiency");
-        btnEfficiency->setCheckable(true);
-        btnEfficiency->setCursor(Qt::PointingHandCursor);
-        if (ui->btnSidebarLogistiqueCamions)
-            btnEfficiency->setStyleSheet(ui->btnSidebarLogistiqueCamions->styleSheet());
-        ui->LogistiqueSubmenu->layout()->addWidget(btnEfficiency);
-        connect(btnEfficiency, &QPushButton::clicked, this, [this]() {
-            setLogistiquePage(LogistiqueModuleWidget::EfficiencyIdx, QStringLiteral("Gestion de la Logistique - Éco & Maintenance"));
-        });
+    // Dynamically created buttons for Efficiency and Activity
+    // Note: These are now skipped as the layouts don't exist as widgets
+    // Buttons will be created dynamically if needed in the future
 
-        auto *btnActivity = new QPushButton("Historique d'Activité", ui->LogistiqueSubmenu);
-        btnActivity->setObjectName("btnSidebarLogistiqueActivity");
-        btnActivity->setCheckable(true);
-        btnActivity->setCursor(Qt::PointingHandCursor);
-        if (ui->btnSidebarLogistiqueCamions)
-            btnActivity->setStyleSheet(ui->btnSidebarLogistiqueCamions->styleSheet());
-        ui->LogistiqueSubmenu->layout()->addWidget(btnActivity);
-        connect(btnActivity, &QPushButton::clicked, this, [this]() {
-            setLogistiquePage(LogistiqueModuleWidget::ActivityIdx, QStringLiteral("Gestion de la Logistique - Historique d'Activité"));
-        });
-    }
-
-    if (ui->PecheSubmenu) {
-        PecheSubmenuVisible = false;
-        ui->PecheSubmenu->setVisible(false);
-    }
+    PecheSubmenuVisible = false;
 
     if (ui->btnSidebarPeche) {
         ui->btnSidebarPeche->setCheckable(true);
@@ -883,10 +853,8 @@ void MainWindow::setPage(const QString &title, int pageIndex)
         ui->lblTitreDash->setText(title);
     }
 
-    if (ui->PecheSubmenu) {
-        PecheSubmenuVisible = false;
-        ui->PecheSubmenu->setVisible(false);
-    }
+    // Note: PecheSubmenu widget doesn't exist in UI (it's a layout)
+    PecheSubmenuVisible = false;
 }
 
 void MainWindow::showLogin()
@@ -1016,19 +984,24 @@ void MainWindow::showDashboard()
         ui->lblUtilisateurTop->setText(fullName.isEmpty() ? QStringLiteral("Admin ONP") : fullName);
     }
 
-    if (ui->PecheSubmenu) {
-        PecheSubmenuVisible = false;
-        ui->PecheSubmenu->setVisible(false);
-    }
+    // Note: PecheSubmenu widget doesn't exist in UI (it's a layout)
+    PecheSubmenuVisible = false;
 }
 
 void MainWindow::setLoginMode(bool enabled)
 {
-    if (ui->topBar) {
-        ui->topBar->setVisible(!enabled);
+    // Hide/show top bar and sidebar in login mode
+    if (ui->lblTitreDash) {
+        ui->lblTitreDash->setVisible(!enabled);
     }
-    if (ui->sidebar) {
-        ui->sidebar->setVisible(!enabled);
+    if (ui->lblUtilisateurTop) {
+        ui->lblUtilisateurTop->setVisible(!enabled);
+    }
+    if (ui->btnParametres) {
+        ui->btnParametres->setVisible(!enabled);
+    }
+    if (ui->scrollAreaSidebar) {
+        ui->scrollAreaSidebar->setVisible(!enabled);
     }
 
     // Remove / restore the content-area margins so the login page fills
@@ -1130,12 +1103,8 @@ void MainWindow::setPechePage(int subIndex, const QString &title)
 
 void MainWindow::togglePecheSubmenu()
 {
-    if (!ui->PecheSubmenu) {
-        return;
-    }
-
+    // Note: PecheSubmenu widget doesn't exist in UI (it's a layout)
     PecheSubmenuVisible = !PecheSubmenuVisible;
-    ui->PecheSubmenu->setVisible(PecheSubmenuVisible);
 }
 bool MainWindow::zoneexiste(QString zone)
 {
@@ -1187,10 +1156,10 @@ void MainWindow::setLogistiquePage(int subIndex, const QString &title)
     if (ui->btnSidebarLogistiqueMap)
         ui->btnSidebarLogistiqueMap->setChecked(subIndex == LogistiqueModuleWidget::MapIdx);
 
-    auto *btnEff = ui->LogistiqueSubmenu ? ui->LogistiqueSubmenu->findChild<QPushButton*>("btnSidebarLogistiqueEfficiency") : nullptr;
+    auto *btnEff = this->findChild<QPushButton*>("btnSidebarLogistiqueEfficiency");
     if (btnEff) btnEff->setChecked(subIndex == LogistiqueModuleWidget::EfficiencyIdx);
 
-    auto *btnAct = ui->LogistiqueSubmenu ? ui->LogistiqueSubmenu->findChild<QPushButton*>("btnSidebarLogistiqueActivity") : nullptr;
+    auto *btnAct = this->findChild<QPushButton*>("btnSidebarLogistiqueActivity");
     if (btnAct) btnAct->setChecked(subIndex == LogistiqueModuleWidget::ActivityIdx);
 
     LogistiqueModule->setPage(subIndex);
@@ -1198,10 +1167,7 @@ void MainWindow::setLogistiquePage(int subIndex, const QString &title)
 
 void MainWindow::toggleLogistiqueSubmenu()
 {
-    if (!ui->LogistiqueSubmenu) return;
     LogistiqueSubmenuVisible = !LogistiqueSubmenuVisible;
-    ui->LogistiqueSubmenu->setVisible(LogistiqueSubmenuVisible);
 }
-
 
 
