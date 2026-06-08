@@ -1,0 +1,241 @@
+/* ═══════════════════════════════════════════════════════════════════════════
+   peche_smartservices.qss  —  "Deep Sea Command Center" Theme
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+/* ── Base ──────────────────────────────────────────────────────────────────── */
+
+QWidget#PecheSmartServicesPage {
+    background: transparent;
+}
+
+QScrollArea,
+QScrollArea > QWidget > QWidget {
+    background: transparent;
+    border: none;
+}
+
+/* ── Global label baseline ─────────────────────────────────────────────────── */
+
+QLabel {
+    color: #F8FAFC;
+    background: transparent;
+}
+
+/* ── Typography & Special Labels ───────────────────────────────────────────── */
+
+QLabel[role="heroTitle"] {
+    font-size: 38px;
+    font-weight: 900;
+    color: #F8FAFC;
+    letter-spacing: -0.5px;
+}
+
+QLabel[role="heroSubtitle"] {
+    font-size: 15px;
+    color: #D9F2FF;
+    line-height: 1.6;
+}
+
+QLabel[role="heroEmoji"] {
+    font-size: 80px;
+}
+
+QLabel[role="cardTitle"] {
+    font-size: 28px;
+    font-weight: 900;
+    color: #F8FAFC;
+}
+
+QLabel[role="cardDesc"] {
+    font-size: 13px;
+    line-height: 1.6;
+    color: #D9F2FF;
+}
+
+QLabel[role="bulletPoint"] {
+    font-size: 13px;
+    color: #EAF7FF;
+}
+
+QLabel[role="metricNumber_actions"] {
+    font-size: 72px;
+    font-weight: 900;
+    color: #F8FAFC;
+}
+
+QLabel[role="metricNumber_services"] {
+    font-size: 72px;
+    font-weight: 900;
+    color: #F8FAFC;
+}
+
+QLabel[role="metricNumber_deadzones"] {
+    font-size: 72px;
+    font-weight: 900;
+    color: #F8FAFC;
+}
+
+QLabel[role="watermarkEmoji"] {
+    font-size: 64px;
+    color: rgba(255, 255, 255, 0.12);
+}
+
+/* ── Hero Header Card ──────────────────────────────────────────────────────── */
+
+QFrame#heroCard {
+    background: qlineargradient(x1:0, y1:0, x2:1, y2:1,
+                                stop:0 #061A3A, stop:0.48 #082B5B,
+                                stop:1 #06436D);
+    border: 1px solid rgba(125, 211, 252, 0.45);
+    border-radius: 16px;
+}
+
+QFrame#heroReadinessBox {
+    background: rgba(2, 14, 35, 0.45);
+    border: 1px solid rgba(125, 211, 252, 0.42);
+    border-radius: 16px;
+}
+
+QFrame#heroReadinessBox QLabel[role="readinessVal"] {
+    font-size: 26px;
+    font-weight: 900;
+    color: #7DD3FC;
+}
+
+/* ── Metric Tiles Row ──────────────────────────────────────────────────────── */
+
+QFrame#metricCard_actions,
+QFrame#metricCard_services,
+QFrame#metricCard_deadzones {
+    background: qlineargradient(x1:0, y1:0, x2:1, y2:1,
+                                stop:0 #061A3A, stop:0.48 #082B5B,
+                                stop:1 #06436D);
+    border: 1px solid rgba(125, 211, 252, 0.40);
+    border-radius: 12px;
+}
+
+QFrame#metricCard_actions { border-top: 3px solid #38BDF8; }
+QFrame#metricCard_services { border-top: 3px solid #34D399; }
+QFrame#metricCard_deadzones { border-top: 3px solid #FB923C; }
+
+/* ── Services Cards ────────────────────────────────────────────────────────── */
+
+QFrame#serviceCard_tarification,
+QFrame#serviceCard_fishvision,
+QFrame#serviceCard_recommandations {
+    background: qlineargradient(x1:0, y1:0, x2:1, y2:1,
+                                stop:0 #061A3A, stop:0.48 #082B5B,
+                                stop:1 #06436D);
+    border-radius: 12px;
+}
+
+/* Base borders */
+QFrame#serviceCard_tarification { border: 1px solid rgba(125, 211, 252, 0.38); }
+QFrame#serviceCard_fishvision { border: 1px solid rgba(125, 211, 252, 0.38); }
+QFrame#serviceCard_recommandations { border: 1px solid rgba(125, 211, 252, 0.38); }
+
+/* Hover states done via stylesheet (glow shadow added in CPP) */
+QFrame#serviceCard_tarification:hover {
+    border: 1px solid rgba(125, 211, 252, 0.78);
+    background: qlineargradient(x1:0, y1:0, x2:1, y2:1, stop:0 #082653, stop:1 #075985);
+}
+QFrame#serviceCard_fishvision:hover {
+    border: 1px solid rgba(125, 211, 252, 0.78);
+    background: qlineargradient(x1:0, y1:0, x2:1, y2:1, stop:0 #082653, stop:1 #075985);
+}
+QFrame#serviceCard_recommandations:hover {
+    border: 1px solid rgba(125, 211, 252, 0.78);
+    background: qlineargradient(x1:0, y1:0, x2:1, y2:1, stop:0 #082653, stop:1 #075985);
+}
+
+/* ── Tag Pills ─────────────────────────────────────────────────────────────── */
+
+QLabel[role="pill_cyan"] {
+    color: #BAE6FD;
+    background: rgba(14, 165, 233, 0.18);
+    border: 1px solid rgba(125, 211, 252, 0.42);
+    border-radius: 12px;
+    padding: 4px 12px;
+    font-size: 10px;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+QLabel[role="pill_green"] {
+    color: #BBF7D0;
+    background: rgba(16, 185, 129, 0.16);
+    border: 1px solid rgba(74, 222, 128, 0.38);
+    border-radius: 12px;
+    padding: 4px 12px;
+    font-size: 10px;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+QLabel[role="pill_coral"] {
+    color: #FED7AA;
+    background: rgba(249, 115, 22, 0.16);
+    border: 1px solid rgba(251, 146, 60, 0.40);
+    border-radius: 12px;
+    padding: 4px 12px;
+    font-size: 10px;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* ── Action Labels ─────────────────────────────────────────────────────────── */
+
+QLabel[role="actionLabel_cyan"] {
+    color: #7DD3FC;
+    font-size: 11px;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+QLabel[role="actionLabel_green"] {
+    color: #86EFAC;
+    font-size: 11px;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+QLabel[role="actionLabel_coral"] {
+    color: #FDBA74;
+    font-size: 11px;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* ── Scroll bar ────────────────────────────────────────────────────────────── */
+
+QScrollBar:vertical {
+    background: transparent;
+    width: 4px;
+    margin: 0px;
+}
+
+QScrollBar::handle:vertical {
+    background: rgba(0, 212, 255, 0.2);
+    border-radius: 2px;
+    min-height: 28px;
+}
+
+QScrollBar::handle:vertical:hover {
+    background: rgba(0, 212, 255, 0.6);
+}
+
+QScrollBar::add-line:vertical,
+QScrollBar::sub-line:vertical {
+    height: 0px;
+}
+
+QScrollBar::add-page:vertical,
+QScrollBar::sub-page:vertical {
+    background: transparent;
+}

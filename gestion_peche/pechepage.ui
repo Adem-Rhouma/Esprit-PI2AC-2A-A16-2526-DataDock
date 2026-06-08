@@ -1,0 +1,194 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>PechePage</class>
+ <widget class="QWidget" name="PechePage">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1170</width>
+    <height>720</height>
+   </rect>
+  </property>
+  <layout class="QVBoxLayout" name="verticalLayout">
+   <property name="spacing">
+    <number>16</number>
+   </property>
+   <property name="leftMargin">
+    <number>24</number>
+   </property>
+   <property name="topMargin">
+    <number>24</number>
+   </property>
+   <property name="rightMargin">
+    <number>24</number>
+   </property>
+   <property name="bottomMargin">
+    <number>24</number>
+   </property>
+   <item>
+    <widget class="QWidget" name="controlsWidget">
+     <layout class="QHBoxLayout" name="controlsLayout">
+      <property name="spacing">
+       <number>10</number>
+      </property>
+      <property name="leftMargin">
+       <number>0</number>
+      </property>
+      <property name="topMargin">
+       <number>0</number>
+      </property>
+      <property name="rightMargin">
+       <number>0</number>
+      </property>
+      <property name="bottomMargin">
+       <number>0</number>
+      </property>
+      <item>
+       <widget class="QPushButton" name="btnAddPeche">
+        <property name="text">
+         <string>Enregistrer lot</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="btnArchivedPeche">
+        <property name="text">
+         <string>Lots archivés</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLabel" name="labelSort">
+        <property name="text">
+         <string>Trier:</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QComboBox" name="comboSortField">
+        <item>
+         <property name="text">
+          <string>Date débarquement</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>Espèce</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>Statut lot</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>Origine</string>
+         </property>
+        </item>
+       </widget>
+      </item>
+      <item>
+       <widget class="QComboBox" name="comboSortOrder">
+        <item>
+         <property name="text">
+          <string>Asc</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>Desc</string>
+         </property>
+        </item>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLabel" name="labelSearch">
+        <property name="text">
+         <string>Recherche:</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QComboBox" name="comboSearchField">
+        <item>
+         <property name="text">
+          <string>Code lot</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>Date débarquement</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>Espèce</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>Statut lot</string>
+         </property>
+        </item>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLineEdit" name="searchBar">
+        <property name="placeholderText">
+         <string>Rechercher un lot...</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <spacer name="horizontalSpacer">
+        <property name="orientation">
+         <enum>Qt::Horizontal</enum>
+        </property>
+        <property name="sizeHint" stdset="0">
+         <size>
+          <width>40</width>
+          <height>20</height>
+         </size>
+        </property>
+       </spacer>
+      </item>
+      <item>
+       <widget class="QPushButton" name="btnExport">
+        <property name="text">
+         <string>Exporter ▼</string>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </widget>
+   </item>
+   <item>
+   <widget class="QWidget" name="tableCard">
+    <layout class="QVBoxLayout" name="tableCardLayout">
+     <property name="leftMargin">
+      <number>12</number>
+     </property>
+     <property name="topMargin">
+      <number>12</number>
+     </property>
+     <property name="rightMargin">
+      <number>12</number>
+     </property>
+     <property name="bottomMargin">
+      <number>12</number>
+     </property>
+      <item>
+       <widget class="QTableWidget" name="tablePeche"/>
+      </item>
+     </layout>
+    </widget>
+   </item>
+  </layout>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
+
+

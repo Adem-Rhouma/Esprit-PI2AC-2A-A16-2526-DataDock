@@ -1,0 +1,92 @@
+-- Historique / archivage pour le module gestion de la peche
+-- Oracle bootstrap script
+
+DECLARE
+    v_count NUMBER := 0;
+BEGIN
+    SELECT COUNT(*)
+      INTO v_count
+      FROM USER_TAB_COLUMNS
+     WHERE TABLE_NAME = 'PECHES'
+       AND COLUMN_NAME = 'IS_ARCHIVED';
+
+    IF v_count = 0 THEN
+        EXECUTE IMMEDIATE
+            'ALTER TABLE PECHES ADD (IS_ARCHIVED NUMBER(1) DEFAULT 0 NOT NULL)';
+    END IF;
+END;
+/
+
+DECLARE
+    v_count NUMBER := 0;
+BEGIN
+    SELECT COUNT(*)
+      INTO v_count
+      FROM USER_TABLES
+     WHERE TABLE_NAME = 'FISHVISION_ANALYSES';
+
+    IF v_count = 0 THEN
+        EXECUTE IMMEDIATE q'[
+            CREATE TABLE FISHVISION_ANALYSES (
+                ANALYSIS_ID NUMBER PRIMARY KEY,
+                IDPECHE NUMBER NULL,
+                IMAGE_PATH VARCHAR2(500 CHAR),
+                ESPECE VARCHAR2(120 CHAR) NOT NULL,
+                NOM_SCIENTIFIQUE VARCHAR2(180 CHAR),
+                POIDS_ESTIME VARCHAR2(40 CHAR),
+                TAGS_JSON CLOB,
+                GRADE VARCHAR2(10 CHAR),
+                SCORE_FRAICHEUR NUMBER(3),
+                SCORE_OEIL NUMBER(3),
+                SCORE_BRANCHIES NUMBER(3),
+                SCORE_PEAU NUMBER(3),
+                VERDICT VARCHAR2(250 CHAR),
+                RAPPORT_IA CLOB,
+                INDICATEURS_JSON CLOB,
+                VALEUR_KG NUMBER(10,3),
+                FOURCHETTE_MIN NUMBER(10,3),
+                FOURCHETTE_MAX NUMBER(10,3),
+                CANAUX_VENTE_JSON CLOB,
+                RECOMMANDATIONS_JSON CLOB,
+                POSITIONNEMENT_JSON CLOB,
+                CREATED_AT TIMESTAMP DEFAULT SYSTIMESTAMP NOT NULL,
+                UPDATED_AT TIMESTAMP DEFAULT SYSTIMESTAMP NOT NULL,
+                CONSTRAINT FK_FV_ANALYSIS_PECHE
+                    FOREIGN KEY (IDPECHE) REFERENCES PECHES (IDPECHE)
+            )
+        ]';
+    END IF;
+END;
+/
+
+DECLARE
+    v_count NUMBER := 0;
+BEGIN
+    SELECT COUNT(*)
+      INTO v_count
+      FROM USER_INDEXES
+     WHERE INDEX_NAME = 'IDX_FV_ANALYSIS_PECHE';
+
+    IF v_count = 0 THEN
+        EXECUTE IMMEDIATE
+            'CREATE INDEX IDX_FV_ANALYSIS_PECHE ON FISHVISION_ANALYSES (IDPECHE)';
+    END IF;
+END;
+/
+
+DECLARE
+    v_count NUMBER := 0;
+BEGIN
+    SELECT COUNT(*)
+      INTO v_count
+      FROM USER_INDEXES
+     WHERE INDEX_NAME = 'IDX_FV_ANALYSIS_CREATED_AT';
+
+    IF v_count = 0 THEN
+        EXECUTE IMMEDIATE
+            'CREATE INDEX IDX_FV_ANALYSIS_CREATED_AT ON FISHVISION_ANALYSES (CREATED_AT DESC)';
+    END IF;
+END;
+/
+
+COMMIT;

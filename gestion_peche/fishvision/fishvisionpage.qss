@@ -1,0 +1,345 @@
+/* === FishVisionPage Modern Glassmorphism Redesign === */
+
+FishVisionPage {
+    background-color: transparent;
+    font-family: "Cal Sans", "Segoe UI", Arial, sans-serif;
+}
+
+/* === HEADER BAR === */
+#headerBar {
+    background: qlineargradient(x1:0, y1:0, x2:1, y2:0, stop:0 #101f52, stop:1 #36175e);
+    border-bottom: 1px solid rgba(139, 92, 246, 0.4);
+}
+
+#lblTitrePage {
+    font-size: 18px;
+    font-weight: 700;
+    color: #1e3a8a;
+    letter-spacing: 0.5px;
+}
+
+#lblSoustitrePage {
+    font-size: 11px;
+    color: #2563eb;
+    margin-top: 2px;
+}
+
+#badgeGeminiTop {
+    background: qlineargradient(x1:0, y1:0, x2:1, y2:0, stop:0 #6366f1, stop:1 #a855f7);
+    color: #1e3a8a;
+    font-weight: 700;
+    font-size: 11px;
+    border-radius: 12px;
+    padding: 4px 12px;
+    margin-left: 10px;
+}
+
+#btnRetour {
+    background-color: rgba(255, 255, 255, 0.05);
+    color: #1e40af;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 18px;
+    padding: 8px 16px;
+    font-weight: 700;
+}
+#btnRetour:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+    color: #1e3a8a;
+}
+
+/* === PRIMARY BUTTONS === */
+QPushButton#btnPrimary, QPushButton#btnNouvelleAnalyse, QPushButton#btnSauvegarder {
+    background: qlineargradient(x1:0, y1:0, x2:1, y2:0, stop:0 #0ea5e9, stop:1 #6366f1);
+    color: #1e3a8a;
+    border-radius: 18px;
+    padding: 8px 20px;
+    font-weight: 700;
+    border: none;
+}
+QPushButton#btnPrimary:hover, QPushButton#btnNouvelleAnalyse:hover, QPushButton#btnSauvegarder:hover {
+    background: qlineargradient(x1:0, y1:0, x2:1, y2:0, stop:0 #38bdf8, stop:1 #818cf8);
+}
+
+/* === SECONDARY BUTTONS === */
+QPushButton#btnSecondary, #btnImporterImage, #btnRattacher, #btnExporterPdf, #btnNouvelleAnalyseBas, #btnHistorique {
+    background: rgba(255, 255, 255, 0.6);
+    color: #1e3a8a;
+    border: 1px solid rgba(255, 255, 255, 0.8);
+    border-radius: 16px;
+    padding: 10px 20px;
+    font-weight: 700;
+}
+QPushButton#btnSecondary:hover {
+    background-color: rgba(255, 255, 255, 0.9);
+    border: 1px solid #0284c7;
+    color: #1e3a8a;
+}
+
+#btnTextLink {
+    background: transparent;
+    color: #38bdf8;
+    border: none;
+    font-weight: 700;
+    font-size: 13px;
+}
+#btnTextLink:hover {
+    color: #7dd3fc;
+    text-decoration: underline;
+}
+
+/* === MAIN CARDS (Glassmorphism -> Opaque Blue/Purple) === */
+#carteAnalyse, #carteUpload, #carteResultatHeader {
+    background: qlineargradient(x1:0, y1:0, x2:1, y2:1, stop:0 #8BCBFC, stop:0.33 #7CD7F7, stop:0.66 #90E6FC, stop:1 #A8EEFF);
+    border: 1px solid rgba(255, 255, 255, 0.6);
+    border-radius: 12px;
+}
+
+#carteAnalyse:hover, #carteResultatHeader:hover {
+    border: 1px solid rgba(255, 255, 255, 0.9);
+    background: qlineargradient(x1:0, y1:0, x2:1, y2:1, stop:0 #9DE0FF, stop:1 #BFFFFF);
+}
+
+#carteUpload {
+    border: 2px dashed rgba(255, 255, 255, 0.8);
+    background: qlineargradient(x1:0, y1:0, x2:1, y2:1, stop:0 #8BCBFC, stop:0.33 #7CD7F7, stop:0.66 #90E6FC, stop:1 #A8EEFF);
+}
+
+/* === TEXT / TYPOGRAPHY === */
+QLabel {
+    color: #1e293b;
+}
+
+#lblSectionTitle {
+    font-size: 14px;
+    font-weight: 700;
+    color: #1e40af;
+    margin-left: 5px;
+}
+
+#lblIconePoisson {
+    font-size: 48px;
+}
+
+#labelUploadTitre {
+    font-size: 16px;
+    font-weight: 700;
+    color: #1e3a8a;
+}
+
+#labelUploadSousTitre {
+    font-size: 13px;
+    color: #2563eb;
+}
+
+#lblNomEspece {
+    font-size: 22px;
+    font-weight: 700;
+    color: #1e3a8a;
+}
+
+#lblNomScientifique {
+    font-size: 13px;
+    color: #2563eb;
+    font-style: italic;
+}
+
+#lblImagePoisson {
+    background-color: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 12px;
+}
+
+/* === TABS STYLE === */
+#tabsContainer {
+    background: qlineargradient(x1:0, y1:0, x2:1, y2:1, stop:0 #8BCBFC, stop:0.33 #7CD7F7, stop:0.66 #90E6FC, stop:1 #A8EEFF);
+    border: 1px solid rgba(255, 255, 255, 0.6);
+    border-radius: 14px;
+    padding: 4px;
+}
+
+#btnOngletFraicheur, #btnOngletRapport, #btnOngletMarche, #btnOngletRecommandations {
+    background-color: transparent;
+    color: #1e40af;
+    border: none;
+    border-radius: 10px;
+    padding: 8px 16px;
+    font-weight: 700;
+    font-size: 13px;
+}
+
+#btnOngletFraicheur:hover, #btnOngletRapport:hover, #btnOngletMarche:hover, #btnOngletRecommandations:hover {
+    color: #1e3a8a;
+    background-color: rgba(255, 255, 255, 0.6);
+}
+
+QPushButton[tabActif="true"] {
+    background-color: rgba(2, 132, 199, 0.1) !important;
+    color: #0284c7 !important;
+    border: 1px solid rgba(2, 132, 199, 0.3) !important;
+}
+
+/* === PROGRESS BARS === */
+QProgressBar {
+    background-color: rgba(255, 255, 255, 0.05);
+    border: none;
+    border-radius: 4px;
+    height: 8px;
+    min-height: 8px;
+    max-height: 8px;
+}
+
+QProgressBar::chunk {
+    background: qlineargradient(x1:0, y1:0, x2:1, y2:0, stop:0 #10b981, stop:1 #34d399);
+    border-radius: 4px;
+}
+
+QProgressBar[warning="true"]::chunk {
+    background: qlineargradient(x1:0, y1:0, x2:1, y2:0, stop:0 #f59e0b, stop:1 #fbbf24);
+}
+
+/* === BADGES === */
+#badgeAI {
+    background: rgba(139, 92, 246, 0.15);
+    border: 1px solid rgba(139, 92, 246, 0.4);
+    color: #6d28d9;
+    border-radius: 10px;
+    padding: 2px 8px;
+    font-size: 10px;
+    font-weight: 700;
+}
+
+#infoBadge {
+    border-radius: 12px;
+    padding: 4px 10px;
+    font-size: 11px;
+    font-weight: 700;
+}
+
+#infoBadge[badgeType="violet"] {
+    background-color: rgba(139, 92, 246, 0.15);
+    border: 1px solid rgba(139, 92, 246, 0.3);
+    color: #6d28d9;
+}
+
+#infoBadge[badgeType="ok"], #infoBadge[badgeType="green"] {
+    background-color: rgba(16, 185, 129, 0.15);
+    border: 1px solid rgba(16, 185, 129, 0.3);
+    color: #047857;
+}
+
+#infoBadge[badgeType="blue"] {
+    background-color: rgba(14, 165, 233, 0.15);
+    border: 1px solid rgba(14, 165, 233, 0.3);
+    color: #0369a1;
+}
+
+#infoBadge[badgeType="warning"] {
+    background-color: rgba(245, 158, 11, 0.15);
+    border: 1px solid rgba(245, 158, 11, 0.3);
+    color: #b45309;
+}
+
+#infoBadge[badgeType="critical"] {
+    background-color: rgba(239, 68, 68, 0.15);
+    border: 1px solid rgba(239, 68, 68, 0.3);
+    color: #b91c1c;
+}
+
+#gradeBadge {
+    border-radius: 10px;
+    padding: 2px 10px;
+    font-size: 11px;
+    font-weight: 700;
+}
+
+#gradeBadge[badgeType="gradeA"] {
+    background-color: rgba(16, 185, 129, 0.2);
+    border: 1px solid rgba(16, 185, 129, 0.4);
+    color: #047857;
+}
+#gradeBadge[badgeType="warning"] {
+    background-color: rgba(245, 158, 11, 0.2);
+    border: 1px solid rgba(245, 158, 11, 0.4);
+    color: #b45309;
+}
+#gradeBadge[badgeType="critical"] {
+    background-color: rgba(239, 68, 68, 0.2);
+    border: 1px solid rgba(239, 68, 68, 0.4);
+    color: #b91c1c;
+}
+#gradeBadge[badgeType="neutral"] {
+    background-color: rgba(148, 163, 184, 0.15);
+    border: 1px solid rgba(148, 163, 184, 0.3);
+    color: #2563eb;
+}
+
+/* === SUB-WIDGETS === */
+#blocRapportAI {
+    background: rgba(255, 255, 255, 0.5);
+    border-left: 3px solid #0284c7;
+    border-radius: 8px;
+}
+
+#indicatorCard, #channelCard, #carteRecente {
+    background: qlineargradient(x1:0, y1:0, x2:1, y2:1, stop:0 #8BCBFC, stop:0.33 #7CD7F7, stop:0.66 #90E6FC, stop:1 #A8EEFF);
+    border: 1px solid rgba(255, 255, 255, 0.6);
+    border-radius: 12px;
+}
+#indicatorCard:hover, #channelCard:hover, #carteRecente:hover {
+    background: qlineargradient(x1:0, y1:0, x2:1, y2:1, stop:0 #9DE0FF, stop:1 #BFFFFF);
+    border: 1px solid rgba(255, 255, 255, 0.9);
+}
+
+#channelIconBox, #recommendationIcon {
+    border-radius: 8px;
+    font-weight: bold;
+    font-size: 12px;
+}
+#channelIconBox[tone="green"], #recommendationIcon[tone="trace"] {
+    background-color: rgba(16, 185, 129, 0.15); color: #047857;
+}
+#channelIconBox[tone="blue"], #recommendationIcon[tone="cold"] {
+    background-color: rgba(14, 165, 233, 0.15); color: #0369a1;
+}
+#channelIconBox[tone="violet"], #recommendationIcon[tone="analytics"] {
+    background-color: rgba(139, 92, 246, 0.15); color: #6d28d9;
+}
+#recommendationIcon[tone="pricing"] {
+    background-color: rgba(245, 158, 11, 0.15); color: #b45309;
+}
+
+#itemRecommandation, #timelineRow, #marketRow {
+    border-bottom: 1px solid rgba(15, 23, 42, 0.1);
+}
+
+#lineVerdictTop, #lineVerdictBottom, #lineRapport, #lineValeur, #linePositionnement {
+    background-color: rgba(15, 23, 42, 0.1);
+    min-height: 1px; max-height: 1px;
+}
+
+#lblPrixKg {
+    font-size: 36px;
+    font-weight: 700;
+    color: #1e3a8a;
+}
+
+/* === SCROLLBAR === */
+QScrollArea {
+    background: transparent;
+}
+QScrollBar:vertical {
+    width: 6px;
+    background: transparent;
+}
+QScrollBar::handle:vertical {
+    background: rgba(148, 163, 184, 0.5);
+    border-radius: 3px;
+    min-height: 20px;
+}
+QScrollBar::handle:vertical:hover {
+    background: rgba(148, 163, 184, 0.8);
+}
+QScrollBar::add-line:vertical, QScrollBar::sub-line:vertical, QScrollBar::add-page:vertical, QScrollBar::sub-page:vertical {
+    background: transparent; border: none; height: 0px;
+}
+

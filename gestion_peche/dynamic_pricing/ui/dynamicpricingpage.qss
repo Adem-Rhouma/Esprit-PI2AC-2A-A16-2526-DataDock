@@ -1,0 +1,204 @@
+#DynamicPricingPage {
+    color: #f5fbff;
+}
+
+QFrame#TopBar {
+    background: qlineargradient(x1: 0, y1: 0, x2: 1, y2: 0,
+        stop: 0 rgba(6, 18, 35, 185),
+        stop: 0.5 rgba(10, 28, 52, 168),
+        stop: 1 rgba(8, 23, 45, 148));
+    border-bottom: 1px solid rgba(143, 212, 255, 55);
+}
+
+QLabel#WindowTitle {
+    font-size: 30px;
+    font-weight: 800;
+    color: #ffffff;
+}
+
+QLabel#WindowSubtitle {
+    font-size: 13px;
+    color: rgba(226, 240, 255, 190);
+}
+
+QFrame#KpiCard, QFrame#GlassCard, QFrame#HeroCard {
+    border: 1px solid rgba(255, 255, 255, 0.6);
+    border-radius: 26px;
+}
+
+QFrame#KpiCard, QFrame#GlassCard {
+    background: qlineargradient(x1:0, y1:0, x2:1, y2:1,
+        stop:0 #8BCBFC, stop:0.33 #7CD7F7,
+        stop:0.66 #90E6FC, stop:1 #A8EEFF);
+}
+
+QFrame#HeroCard {
+    background: qlineargradient(x1:0, y1:0, x2:1, y2:1,
+        stop:0 #8BCBFC, stop:0.33 #7CD7F7,
+        stop:0.66 #90E6FC, stop:1 #A8EEFF);
+    border: 1px solid rgba(255, 255, 255, 0.8);
+}
+
+QLabel#SectionTitle {
+    font-size: 19px;
+    font-weight: 700;
+    color: #1e3a8a;
+}
+
+QLabel#CardTitle {
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.4px;
+    color: #1e40af;
+}
+
+QLabel#KpiValue {
+    font-size: 26px;
+    font-weight: 800;
+    color: #1e3a8a;
+}
+
+QLabel#KpiValueSmall {
+    font-size: 24px;
+    font-weight: 800;
+    color: #059669;
+}
+
+QLabel#IndicatorValue {
+    font-size: 22px;
+    font-weight: 800;
+    color: #0284c7;
+}
+
+QLabel#CardHelper, QLabel#BodyLabel, QLabel#MutedLabel {
+    font-size: 12px;
+    color: #2563eb;
+}
+
+QLabel#EyebrowLabel {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 1.8px;
+    color: #0284c7;
+}
+
+QLabel#HeroTitle {
+    font-size: 22px;
+    font-weight: 700;
+    color: #1e3a8a;
+}
+
+QLabel#HeroPrice {
+    font-size: 46px;
+    font-weight: 800;
+    color: #1e3a8a;
+}
+
+QPushButton#PrimaryButton, QPushButton#AccentButton, QPushButton#SecondaryButton {
+    min-height: 44px;
+    padding: 0 18px;
+    border-radius: 16px;
+    border: 1px solid transparent;
+    font-size: 13px;
+    font-weight: 700;
+}
+
+QPushButton#PrimaryButton {
+    color: white;
+    background: qlineargradient(x1: 0, y1: 0, x2: 1, y2: 0,
+        stop: 0 #0284c7,
+        stop: 1 #0ea5e9);
+}
+
+QPushButton#PrimaryButton:hover {
+    background: qlineargradient(x1: 0, y1: 0, x2: 1, y2: 0,
+        stop: 0 #0369a1,
+        stop: 1 #0284c7);
+}
+
+QPushButton#AccentButton {
+    color: white;
+    background: qlineargradient(x1: 0, y1: 0, x2: 1, y2: 0,
+        stop: 0 #1f6feb,
+        stop: 1 #31b6f0);
+}
+
+QPushButton#AccentButton:hover {
+    background: qlineargradient(x1: 0, y1: 0, x2: 1, y2: 0,
+        stop: 0 #3480ff,
+        stop: 1 #50c4ff);
+}
+
+QPushButton#SecondaryButton {
+    color: #1e40af;
+    background: rgba(255, 255, 255, 0.6);
+    border-color: rgba(255, 255, 255, 0.8);
+}
+
+QPushButton#SecondaryButton:hover {
+    background: rgba(255, 255, 255, 0.8);
+}
+
+QComboBox#InputField, QDoubleSpinBox#InputField {
+    background: rgba(255, 255, 255, 0.6);
+    color: #1e3a8a;
+    border: 1px solid rgba(255, 255, 255, 0.8);
+    border-radius: 16px;
+    padding: 10px 14px;
+}
+
+QComboBox#InputField:hover, QDoubleSpinBox#InputField:hover {
+    border-color: #0284c7;
+}
+
+QComboBox#InputField::drop-down {
+    border: none;
+    width: 28px;
+}
+
+QProgressBar {
+    background: rgba(255, 255, 255, 0.5);
+    border-radius: 6px;
+}
+
+QProgressBar::chunk {
+    border-radius: 6px;
+    background: qlineargradient(x1: 0, y1: 0, x2: 1, y2: 0,
+        stop: 0 #0284c7,
+        stop: 1 #0ea5e9);
+}
+
+QTableView {
+    background: rgba(255, 255, 255, 0.5);
+    alternate-background-color: rgba(255, 255, 255, 0.3);
+    border: 1px solid rgba(255, 255, 255, 0.6);
+    border-radius: 20px;
+    color: #1e3a8a;
+    selection-background-color: rgba(2, 132, 199, 0.2);
+    padding: 8px;
+}
+
+QHeaderView::section {
+    background: rgba(255, 255, 255, 0.4);
+    color: #1e40af;
+    border: none;
+    padding: 12px 10px;
+    font-weight: 700;
+}
+
+QScrollArea {
+    border: none;
+    background: transparent;
+}
+
+QScrollArea > QWidget > QWidget {
+    background: transparent;
+}
+
+QChartView {
+    background: transparent;
+    border: 1px solid rgba(255, 255, 255, 0.6);
+    border-radius: 20px;
+    padding: 6px;
+}
+

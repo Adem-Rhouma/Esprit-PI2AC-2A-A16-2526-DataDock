@@ -1,0 +1,224 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MaintenancePage</class>
+ <widget class="QWidget" name="MaintenancePage">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1000</width>
+    <height>700</height>
+   </rect>
+  </property>
+  <property name="styleSheet">
+   <string>background: transparent;</string>
+  </property>
+  <layout class="QVBoxLayout" name="rootLayout">
+   <property name="spacing">
+    <number>20</number>
+   </property>
+   <property name="leftMargin">
+    <number>24</number>
+   </property>
+   <property name="topMargin">
+    <number>24</number>
+   </property>
+   <property name="rightMargin">
+    <number>24</number>
+   </property>
+   <property name="bottomMargin">
+    <number>24</number>
+   </property>
+   <item>
+    <widget class="QWidget" name="headerWidget" native="true">
+     <layout class="QVBoxLayout" name="headerLayout">
+      <property name="spacing">
+       <number>4</number>
+      </property>
+      <property name="leftMargin">
+       <number>0</number>
+      </property>
+      <property name="topMargin">
+       <number>0</number>
+      </property>
+      <property name="rightMargin">
+       <number>0</number>
+      </property>
+      <property name="bottomMargin">
+       <number>0</number>
+      </property>
+      <item>
+       <widget class="QLabel" name="lblTitle">
+        <property name="styleSheet">
+         <string>font-size: 26px; font-weight: 700; color: #0B2545;</string>
+        </property>
+        <property name="text">
+         <string>Maintenance Prédictive &amp; Planification</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLabel" name="lblSubtitle">
+        <property name="styleSheet">
+         <string>font-size: 14px; color: #5390D9; font-weight: 600;</string>
+        </property>
+        <property name="text">
+         <string>État de la flotte et calendrier prévisionnel des interventions</string>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </widget>
+   </item>
+   <item>
+    <widget class="QLabel" name="lblGanttTitle">
+     <property name="styleSheet">
+      <string>font-size: 18px; font-weight: 700; color: #0B2545;</string>
+     </property>
+     <property name="text">
+      <string>Timeline de la Flotte</string>
+     </property>
+    </widget>
+   </item>
+   <item>
+    <widget class="QFrame" name="ganttHeader">
+     <property name="minimumSize">
+      <size>
+       <width>0</width>
+       <height>40</height>
+      </size>
+     </property>
+     <property name="styleSheet">
+      <string>background: #F8FAFC; border-top-left-radius: 12px; border-top-right-radius: 12px; border: 1px solid #E3E8EE; border-bottom: none;</string>
+     </property>
+     <layout class="QHBoxLayout" name="ganttHeaderLayout">
+      <item>
+       <widget class="QLabel" name="lblH1">
+        <property name="minimumSize">
+         <size>
+          <width>120</width>
+          <height>0</height>
+         </size>
+        </property>
+        <property name="styleSheet">
+         <string>font-weight: 700; color: #475569; font-size: 11px;</string>
+        </property>
+        <property name="text">
+         <string>VAISSEAU</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLabel" name="lblH2">
+        <property name="styleSheet">
+         <string>font-weight: 700; color: #475569; font-size: 11px;</string>
+        </property>
+        <property name="text">
+         <string>PLANNING PRÉVISIONNEL (STATUT)</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <spacer name="horizontalSpacer_3">
+        <property name="orientation">
+         <enum>Qt::Horizontal</enum>
+        </property>
+        <property name="sizeHint" stdset="0">
+         <size>
+          <width>40</width>
+          <height>20</height>
+         </size>
+        </property>
+       </spacer>
+      </item>
+      <item>
+       <widget class="QLabel" name="lblLegend">
+        <property name="styleSheet">
+         <string>font-size: 10px; color: #94A3B8;</string>
+        </property>
+        <property name="text">
+         <string>🔵 Normal  🟠 Attention  🔴 Critique</string>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </widget>
+   </item>
+   <item>
+    <widget class="QScrollArea" name="ganttScrollArea">
+     <property name="minimumSize">
+      <size>
+       <width>0</width>
+       <height>300</height>
+      </size>
+     </property>
+     <property name="frameShape">
+      <enum>QFrame::NoFrame</enum>
+     </property>
+     <property name="widgetResizable">
+      <bool>true</bool>
+     </property>
+     <widget class="QWidget" name="ganttScrollContents">
+      <layout class="QVBoxLayout" name="ganttScrollLayout">
+       <property name="spacing">
+        <number>0</number>
+       </property>
+       <property name="leftMargin">
+        <number>0</number>
+       </property>
+       <property name="topMargin">
+        <number>0</number>
+       </property>
+       <property name="rightMargin">
+        <number>0</number>
+       </property>
+       <property name="bottomMargin">
+        <number>0</number>
+       </property>
+       <item>
+        <widget class="QFrame" name="ganttCard">
+         <property name="styleSheet">
+          <string>background: white; border-radius: 20px; border: 1px solid #E3E8EE;</string>
+         </property>
+         <layout class="QVBoxLayout" name="ganttContainerLayout"/>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+    </widget>
+   </item>
+   <item>
+    <widget class="QLabel" name="lblTableTitle">
+     <property name="styleSheet">
+      <string>font-size: 18px; font-weight: 700; color: #0B2545;</string>
+     </property>
+     <property name="text">
+      <string>Vaisseaux Prioritaires</string>
+     </property>
+    </widget>
+   </item>
+   <item>
+    <widget class="QTableView" name="tableView">
+     <property name="styleSheet">
+      <string>QTableView { background: white; color: #1E293B; border: 1px solid #E3E8EE; border-radius: 12px; gridline-color: #F1F5F9; selection-background-color: #EAF1FF; } QHeaderView::section { background: #F8FAFC; border: none; padding: 10px; font-weight: 600; color: #475569; }</string>
+     </property>
+    </widget>
+   </item>
+   <item>
+    <spacer name="verticalSpacer">
+     <property name="orientation">
+      <enum>Qt::Vertical</enum>
+     </property>
+     <property name="sizeHint" stdset="0">
+      <size>
+       <width>20</width>
+       <height>40</height>
+      </size>
+     </property>
+    </spacer>
+   </item>
+  </layout>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

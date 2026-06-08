@@ -1,0 +1,344 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>PecheCrudDialog</class>
+ <widget class="QDialog" name="PecheCrudDialog">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>600</width>
+    <height>520</height>
+   </rect>
+  </property>
+  <property name="minimumSize">
+   <size>
+    <width>600</width>
+    <height>520</height>
+   </size>
+  </property>
+  <property name="windowTitle">
+   <string>Lot de pêche</string>
+  </property>
+  <layout class="QVBoxLayout" name="mainLayout">
+   <property name="spacing">
+    <number>0</number>
+   </property>
+   <property name="leftMargin">
+    <number>0</number>
+   </property>
+   <property name="topMargin">
+    <number>0</number>
+   </property>
+   <property name="rightMargin">
+    <number>0</number>
+   </property>
+   <property name="bottomMargin">
+    <number>0</number>
+   </property>
+   <item>
+    <widget class="QScrollArea" name="scrollArea">
+     <property name="frameShape">
+      <enum>QFrame::NoFrame</enum>
+     </property>
+     <property name="widgetResizable">
+      <bool>true</bool>
+     </property>
+     <widget class="QWidget" name="scrollAreaWidgetContents">
+      <property name="geometry">
+       <rect>
+        <x>0</x>
+        <y>0</y>
+        <width>660</width>
+        <height>820</height>
+       </rect>
+      </property>
+      <layout class="QVBoxLayout" name="scrollLayout">
+       <property name="spacing">
+        <number>16</number>
+       </property>
+       <property name="leftMargin">
+        <number>20</number>
+       </property>
+       <property name="topMargin">
+        <number>20</number>
+       </property>
+       <property name="rightMargin">
+        <number>20</number>
+       </property>
+       <property name="bottomMargin">
+        <number>20</number>
+       </property>
+       <item>
+        <widget class="QLabel" name="labelTitle">
+         <property name="text">
+          <string>Lot de pêche</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QFrame" name="formFrame">
+         <property name="frameShape">
+          <enum>QFrame::NoFrame</enum>
+         </property>
+         <layout class="QVBoxLayout" name="formFrameLayout">
+          <property name="spacing">
+           <number>12</number>
+          </property>
+          <property name="leftMargin">
+           <number>12</number>
+          </property>
+          <property name="topMargin">
+           <number>12</number>
+          </property>
+          <property name="rightMargin">
+           <number>12</number>
+          </property>
+          <property name="bottomMargin">
+           <number>12</number>
+          </property>
+          <item>
+           <widget class="QLabel" name="labelSectionForm">
+            <property name="text">
+             <string>Informations générales</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <layout class="QFormLayout" name="formLayout">
+            <property name="horizontalSpacing">
+             <number>12</number>
+            </property>
+            <property name="verticalSpacing">
+             <number>12</number>
+            </property>
+            <property name="fieldGrowthPolicy">
+             <enum>QFormLayout::AllNonFixedFieldsGrow</enum>
+            </property>
+            <property name="labelAlignment">
+             <set>Qt::AlignLeft|Qt::AlignVCenter</set>
+            </property>
+            <item row="0" column="0">
+             <widget class="QLabel" name="labelDate">
+              <property name="text">
+               <string>Date débarquement</string>
+              </property>
+             </widget>
+            </item>
+            <item row="0" column="1">
+             <widget class="QDateEdit" name="datePecheEdit">
+              <property name="calendarPopup">
+               <bool>true</bool>
+              </property>
+              <property name="displayFormat">
+               <string>yyyy-MM-dd</string>
+              </property>
+             </widget>
+            </item>
+            <item row="1" column="0">
+             <widget class="QLabel" name="labelNavire">
+              <property name="text">
+               <string>ID Navire</string>
+              </property>
+             </widget>
+            </item>
+            <item row="1" column="1">
+             <widget class="QComboBox" name="comboIdNavire"/>
+            </item>
+            <item row="2" column="0">
+             <widget class="QLabel" name="labelZone">
+              <property name="text">
+               <string>Zone peche</string>
+              </property>
+             </widget>
+            </item>
+            <item row="2" column="1">
+             <widget class="QLineEdit" name="lineZonePeche"/>
+            </item>
+            <item row="3" column="0">
+             <widget class="QLabel" name="labelDescription">
+              <property name="text">
+               <string>Statut / Description</string>
+              </property>
+             </widget>
+            </item>
+            <item row="3" column="1">
+             <widget class="QPlainTextEdit" name="plainDescription">
+              <property name="minimumHeight">
+               <number>80</number>
+              </property>
+             </widget>
+            </item>
+           </layout>
+          </item>
+         </layout>
+        </widget>
+       </item>
+       <item>
+        <widget class="QFrame" name="dividerLine">
+         <property name="frameShape">
+          <enum>QFrame::HLine</enum>
+         </property>
+         <property name="frameShadow">
+          <enum>QFrame::Sunken</enum>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QLabel" name="labelSectionDetails">
+         <property name="text">
+          <string>Détails du lot</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QTabWidget" name="tabWidget">
+         <property name="currentIndex">
+          <number>0</number>
+         </property>
+         <property name="documentMode">
+          <bool>true</bool>
+         </property>
+         <widget class="QWidget" name="tabEspeces">
+          <attribute name="title">
+           <string>Espèces</string>
+          </attribute>
+          <layout class="QVBoxLayout" name="tabEspecesLayout">
+           <property name="spacing">
+            <number>12</number>
+           </property>
+           <property name="leftMargin">
+            <number>12</number>
+           </property>
+           <property name="topMargin">
+            <number>12</number>
+           </property>
+           <property name="rightMargin">
+            <number>12</number>
+           </property>
+           <property name="bottomMargin">
+            <number>12</number>
+           </property>
+           <item>
+            <widget class="QTableWidget" name="tableEspeces">
+             <property name="minimumHeight">
+              <number>240</number>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <layout class="QHBoxLayout" name="layoutEspecesButtons">
+             <property name="spacing">
+              <number>10</number>
+             </property>
+             <item>
+              <widget class="QPushButton" name="btnAddEspeceRow">
+               <property name="text">
+                <string>Ajouter ligne</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QPushButton" name="btnRemoveEspeceRow">
+               <property name="text">
+                <string>Supprimer ligne</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <spacer name="spacerEspeces">
+               <property name="orientation">
+                <enum>Qt::Horizontal</enum>
+               </property>
+               <property name="sizeHint" stdset="0">
+                <size>
+                 <width>40</width>
+                 <height>20</height>
+                </size>
+               </property>
+              </spacer>
+             </item>
+            </layout>
+           </item>
+          </layout>
+         </widget>
+         <widget class="QWidget" name="tabEmployes">
+          <attribute name="title">
+           <string>Employés</string>
+          </attribute>
+          <layout class="QVBoxLayout" name="tabEmployesLayout">
+           <property name="spacing">
+            <number>12</number>
+           </property>
+           <property name="leftMargin">
+            <number>12</number>
+           </property>
+           <property name="topMargin">
+            <number>12</number>
+           </property>
+           <property name="rightMargin">
+            <number>12</number>
+           </property>
+           <property name="bottomMargin">
+            <number>12</number>
+           </property>
+           <item>
+            <widget class="QTableWidget" name="tableEmployes">
+             <property name="minimumHeight">
+              <number>240</number>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <layout class="QHBoxLayout" name="layoutEmployesButtons">
+             <property name="spacing">
+              <number>10</number>
+             </property>
+             <item>
+              <widget class="QPushButton" name="btnAddEmployeRow">
+               <property name="text">
+                <string>Ajouter ligne</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QPushButton" name="btnRemoveEmployeRow">
+               <property name="text">
+                <string>Supprimer ligne</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <spacer name="spacerEmployes">
+               <property name="orientation">
+                <enum>Qt::Horizontal</enum>
+               </property>
+               <property name="sizeHint" stdset="0">
+                <size>
+                 <width>40</width>
+                 <height>20</height>
+                </size>
+               </property>
+              </spacer>
+             </item>
+            </layout>
+           </item>
+          </layout>
+         </widget>
+        </widget>
+       </item>
+       <item>
+        <widget class="QDialogButtonBox" name="buttonBox">
+         <property name="standardButtons">
+          <set>QDialogButtonBox::Cancel|QDialogButtonBox::Save</set>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+    </widget>
+   </item>
+  </layout>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

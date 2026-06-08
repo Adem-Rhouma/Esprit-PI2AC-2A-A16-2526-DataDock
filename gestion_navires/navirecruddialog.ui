@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>NavireCrudDialog</class>
+ <widget class="QDialog" name="NavireCrudDialog">
+  <property name="geometry">
+   <rect><x>0</x><y>0</y><width>640</width><height>560</height></rect>
+  </property>
+  <property name="minimumSize">
+   <size><width>640</width><height>0</height></size>
+  </property>
+  <property name="windowTitle">
+   <string>Navire</string>
+  </property>
+  <layout class="QVBoxLayout" name="mainLayout">
+   <property name="spacing"><number>16</number></property>
+   <property name="leftMargin"><number>20</number></property>
+   <property name="topMargin"><number>20</number></property>
+   <property name="rightMargin"><number>20</number></property>
+   <property name="bottomMargin"><number>20</number></property>
+   <item>
+    <widget class="QLabel" name="labelTitle">
+     <property name="text"><string>Navire</string></property>
+    </widget>
+   </item>
+   <item>
+    <widget class="QFrame" name="formFrame">
+     <property name="frameShape"><enum>QFrame::NoFrame</enum></property>
+     <layout class="QVBoxLayout" name="formFrameLayout">
+      <property name="spacing"><number>8</number></property>
+      <property name="leftMargin"><number>12</number></property>
+      <property name="topMargin"><number>12</number></property>
+      <property name="rightMargin"><number>12</number></property>
+      <property name="bottomMargin"><number>12</number></property>
+      <item>
+       <widget class="QLabel" name="labelSectionForm">
+        <property name="text"><string>Informations navire</string></property>
+       </widget>
+      </item>
+      <item>
+       <layout class="QFormLayout" name="formLayout">
+        <property name="horizontalSpacing"><number>12</number></property>
+        <property name="verticalSpacing"><number>4</number></property>
+        <property name="fieldGrowthPolicy"><enum>QFormLayout::AllNonFixedFieldsGrow</enum></property>
+        <property name="labelAlignment"><set>Qt::AlignLeft|Qt::AlignVCenter</set></property>
+        <!-- Nom -->
+        <item row="0" column="0">
+         <widget class="QLabel" name="labelNom"><property name="text"><string>Nom *</string></property></widget>
+        </item>
+        <item row="0" column="1">
+         <widget class="QLineEdit" name="inputNom">
+          <property name="placeholderText"><string>Ex: Le Grand Bleu</string></property>
+         </widget>
+        </item>
+        <item row="1" column="1">
+         <widget class="QLabel" name="errNom">
+          <property name="text"><string></string></property>
+          <property name="styleSheet"><string>color: #f87171; font-size: 11px;</string></property>
+         </widget>
+        </item>
+        <!-- Matricule -->
+        <item row="2" column="0">
+         <widget class="QLabel" name="labelMatricule"><property name="text"><string>Matricule *</string></property></widget>
+        </item>
+        <item row="2" column="1">
+         <widget class="QLineEdit" name="inputMatricule">
+          <property name="placeholderText"><string>Ex: TN-2024-001</string></property>
+         </widget>
+        </item>
+        <item row="3" column="1">
+         <widget class="QLabel" name="errMatricule">
+          <property name="text"><string></string></property>
+          <property name="styleSheet"><string>color: #f87171; font-size: 11px;</string></property>
+         </widget>
+        </item>
+        <!-- Type -->
+        <item row="4" column="0">
+         <widget class="QLabel" name="labelType"><property name="text"><string>Type *</string></property></widget>
+        </item>
+        <item row="4" column="1">
+         <widget class="QLineEdit" name="inputType">
+          <property name="placeholderText"><string>Ex: Chalutier</string></property>
+         </widget>
+        </item>
+        <item row="5" column="1">
+         <widget class="QLabel" name="errType">
+          <property name="text"><string></string></property>
+          <property name="styleSheet"><string>color: #f87171; font-size: 11px;</string></property>
+         </widget>
+        </item>
+        <!-- Longueur -->
+        <item row="6" column="0">
+         <widget class="QLabel" name="labelLongueur"><property name="text"><string>Longueur (m) *</string></property></widget>
+        </item>
+        <item row="6" column="1">
+         <widget class="QDoubleSpinBox" name="spinLongueur">
+          <property name="decimals"><number>2</number></property>
+          <property name="minimum"><double>1.0</double></property>
+          <property name="maximum"><double>9999.0</double></property>
+         </widget>
+        </item>
+        <item row="7" column="1">
+         <widget class="QLabel" name="errLongueur">
+          <property name="text"><string></string></property>
+          <property name="styleSheet"><string>color: #f87171; font-size: 11px;</string></property>
+         </widget>
+        </item>
+        <!-- Puissance -->
+        <item row="8" column="0">
+         <widget class="QLabel" name="labelPuissance"><property name="text"><string>Puissance moteur (CV) *</string></property></widget>
+        </item>
+        <item row="8" column="1">
+         <widget class="QDoubleSpinBox" name="spinPuissance">
+          <property name="decimals"><number>2</number></property>
+          <property name="minimum"><double>1.0</double></property>
+          <property name="maximum"><double>999999.0</double></property>
+         </widget>
+        </item>
+        <item row="9" column="1">
+         <widget class="QLabel" name="errPuissance">
+          <property name="text"><string></string></property>
+          <property name="styleSheet"><string>color: #f87171; font-size: 11px;</string></property>
+         </widget>
+        </item>
+        <!-- Propriétaire -->
+        <item row="10" column="0">
+         <widget class="QLabel" name="labelProprietaire"><property name="text"><string>Propriétaire</string></property></widget>
+        </item>
+        <item row="10" column="1">
+         <widget class="QLineEdit" name="inputProprietaire">
+          <property name="placeholderText"><string>Ex: Ahmed Ben Ali</string></property>
+         </widget>
+        </item>
+        <item row="11" column="1">
+         <widget class="QLabel" name="errProprietaire">
+          <property name="text"><string></string></property>
+          <property name="styleSheet"><string>color: #f87171; font-size: 11px;</string></property>
+         </widget>
+        </item>
+        <!-- Statut -->
+        <item row="12" column="0">
+         <widget class="QLabel" name="labelStatut"><property name="text"><string>Statut *</string></property></widget>
+        </item>
+        <item row="12" column="1">
+         <widget class="QComboBox" name="inputStatut">
+          <item><property name="text"><string>En service</string></property></item>
+          <item><property name="text"><string>En maintenance</string></property></item>
+          <item><property name="text"><string>Hors service</string></property></item>
+          <item><property name="text"><string>En cale sèche</string></property></item>
+         </widget>
+        </item>
+       </layout>
+      </item>
+     </layout>
+    </widget>
+   </item>
+   <item>
+    <widget class="QDialogButtonBox" name="buttonBox">
+     <property name="standardButtons">
+      <set>QDialogButtonBox::Cancel|QDialogButtonBox::Save</set>
+     </property>
+    </widget>
+   </item>
+  </layout>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

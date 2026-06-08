@@ -1,0 +1,794 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>DynamicPricingDialog</class>
+ <widget class="QDialog" name="DynamicPricingDialog">
+  <property name="windowTitle">
+   <string>Prix conseillé IA - Test / Simulation</string>
+  </property>
+  <property name="minimumSize">
+   <size>
+    <width>860</width>
+    <height>560</height>
+   </size>
+  </property>
+  <property name="styleSheet">
+   <string>QDialog {
+    background: #FFFFFF;
+}
+
+QFrame#headerFrame {
+    background: qlineargradient(x1:0, y1:0, x2:1, y2:1, stop:0 #7400B8, stop:1 #5E60CE);
+    border-radius: 18px;
+}
+
+QLabel#lblTitle {
+    color: #FFFFFF;
+    font-size: 22px;
+    font-weight: 700;
+}
+
+QLabel#lblSubtitle {
+    color: rgba(255, 255, 255, 200);
+    font-size: 12px;
+}
+
+QLabel#lblAiBadge {
+    color: #FFFFFF;
+    background: rgba(255, 255, 255, 40);
+    border: 1px solid rgba(255, 255, 255, 80);
+    border-radius: 10px;
+    padding: 2px 8px;
+    font-weight: 700;
+}
+
+QLabel#lblAiIcon {
+    color: #FFFFFF;
+    background: rgba(255, 255, 255, 45);
+    border-radius: 22px;
+    min-width: 44px;
+    min-height: 44px;
+    font-weight: 700;
+    font-size: 16px;
+    qproperty-alignment: AlignCenter;
+}
+
+QFrame#contentCard {
+    background: #FFFFFF;
+    border: 1px solid rgba(94, 96, 206, 40);
+    border-radius: 20px;
+}
+
+QFrame#cardSardine, QFrame#cardCalamar, QFrame#cardDorade {
+    background: #FFFFFF;
+    border: 1px solid rgba(94, 96, 206, 35);
+    border-radius: 18px;
+}
+
+QLabel#lblNameSardine, QLabel#lblNameCalamar, QLabel#lblNameDorade {
+    color: #111827;
+    font-size: 16px;
+    font-weight: 700;
+}
+
+QLabel#lblCurrentSardine, QLabel#lblCurrentCalamar, QLabel#lblCurrentDorade {
+    color: #111827;
+    font-size: 11px;
+}
+
+QLabel#lblRecTitleSardine, QLabel#lblRecTitleCalamar, QLabel#lblRecTitleDorade {
+    color: #111827;
+    font-size: 11px;
+}
+
+QLabel#lblRecRangeSardine, QLabel#lblRecRangeCalamar, QLabel#lblRecRangeDorade {
+    color: #111827;
+    background: rgba(94, 96, 206, 12);
+    border: 1px solid rgba(94, 96, 206, 40);
+    border-radius: 10px;
+    padding: 3px 8px;
+    font-weight: 700;
+}
+
+QLabel#lblDeltaSardine {
+    color: #111827;
+    background: rgba(128, 255, 219, 120);
+    border-radius: 10px;
+    padding: 3px 8px;
+    font-weight: 700;
+}
+
+QLabel#lblDeltaCalamar {
+    color: #111827;
+    background: rgba(72, 191, 227, 70);
+    border-radius: 10px;
+    padding: 3px 8px;
+    font-weight: 700;
+}
+
+QLabel#lblDeltaDorade {
+    color: #111827;
+    background: rgba(94, 96, 206, 25);
+    border: 1px solid rgba(94, 96, 206, 50);
+    border-radius: 10px;
+    padding: 3px 8px;
+    font-weight: 700;
+}
+
+QLabel#lblAvisSardine, QLabel#lblAvisCalamar, QLabel#lblAvisDorade {
+    color: #111827;
+    background: rgba(128, 255, 219, 80);
+    border: 1px solid rgba(128, 255, 219, 120);
+    border-radius: 12px;
+    padding: 4px 10px;
+    font-weight: 700;
+}
+
+QLabel#lblIconSardine, QLabel#lblIconCalamar, QLabel#lblIconDorade {
+    color: #FFFFFF;
+    background: qlineargradient(x1:0, y1:0, x2:1, y2:1, stop:0 #7400B8, stop:1 #5E60CE);
+    border-radius: 22px;
+    min-width: 44px;
+    min-height: 44px;
+    font-weight: 700;
+    qproperty-alignment: AlignCenter;
+}
+
+QFrame#calloutFrame {
+    background: rgba(72, 191, 227, 20);
+    border: 1px solid rgba(72, 191, 227, 80);
+    border-radius: 14px;
+}
+
+QLabel#lblCalloutIcon {
+    color: #111827;
+    background: rgba(72, 191, 227, 70);
+    border-radius: 12px;
+    min-width: 24px;
+    min-height: 24px;
+    qproperty-alignment: AlignCenter;
+    font-weight: 700;
+}
+
+QLabel#lblCalloutText {
+    color: #111827;
+    font-size: 12px;
+}
+
+QPushButton#btnClose {
+    background: rgba(94, 96, 206, 15);
+    border: 1px solid rgba(94, 96, 206, 80);
+    border-radius: 16px;
+    padding: 8px 18px;
+    font-weight: 700;
+}
+
+QPushButton#btnExport {
+    background: rgba(116, 0, 184, 12);
+    border: 1px solid rgba(116, 0, 184, 80);
+    border-radius: 16px;
+    padding: 8px 18px;
+    font-weight: 700;
+}
+
+QPushButton#btnExport:disabled {
+    color: rgba(17, 24, 39, 120);
+    background: rgba(94, 96, 206, 8);
+    border: 1px solid rgba(94, 96, 206, 30);
+}
+
+QTableWidget#tableDynamicPricing {
+    border: 1px solid rgba(94, 96, 206, 40);
+    border-radius: 12px;
+    gridline-color: rgba(94, 96, 206, 40);
+}
+</string>
+  </property>
+  <layout class="QVBoxLayout" name="mainLayout">
+   <property name="leftMargin">
+    <number>16</number>
+   </property>
+   <property name="topMargin">
+    <number>16</number>
+   </property>
+   <property name="rightMargin">
+    <number>16</number>
+   </property>
+   <property name="bottomMargin">
+    <number>16</number>
+   </property>
+   <property name="spacing">
+    <number>12</number>
+   </property>
+   <item>
+    <widget class="QFrame" name="headerFrame">
+     <layout class="QHBoxLayout" name="layoutHeader">
+      <property name="leftMargin">
+       <number>16</number>
+      </property>
+      <property name="topMargin">
+       <number>14</number>
+      </property>
+      <property name="rightMargin">
+       <number>16</number>
+      </property>
+      <property name="bottomMargin">
+       <number>14</number>
+      </property>
+      <property name="spacing">
+       <number>12</number>
+      </property>
+      <item>
+       <widget class="QLabel" name="lblAiIcon">
+        <property name="text">
+         <string>AI</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <layout class="QVBoxLayout" name="layoutHeaderText">
+        <property name="spacing">
+         <number>2</number>
+        </property>
+        <item>
+         <widget class="QLabel" name="lblTitle">
+          <property name="text">
+           <string>Prix conseillé IA</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QLabel" name="lblSubtitle">
+          <property name="text">
+           <string>Simulation &amp; recommandations pour la vente locale</string>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </item>
+      <item>
+       <spacer name="spacerHeader">
+        <property name="orientation">
+         <enum>Qt::Horizontal</enum>
+        </property>
+        <property name="sizeHint" stdset="0">
+         <size>
+          <width>40</width>
+          <height>20</height>
+         </size>
+        </property>
+       </spacer>
+      </item>
+      <item>
+       <widget class="QLabel" name="lblAiBadge">
+        <property name="text">
+         <string>IA ACTIVE</string>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </widget>
+   </item>
+   <item>
+    <widget class="QFrame" name="contentCard">
+     <property name="autoFillBackground">
+      <bool>true</bool>
+     </property>
+     <layout class="QVBoxLayout" name="layoutContent">
+      <property name="leftMargin">
+       <number>16</number>
+      </property>
+      <property name="topMargin">
+       <number>16</number>
+      </property>
+      <property name="rightMargin">
+       <number>16</number>
+      </property>
+      <property name="bottomMargin">
+       <number>16</number>
+      </property>
+      <property name="spacing">
+       <number>14</number>
+      </property>
+      <item>
+       <widget class="QStackedWidget" name="stackedMain">
+        <property name="currentIndex">
+         <number>0</number>
+        </property>
+        <widget class="QWidget" name="pageCards">
+         <layout class="QVBoxLayout" name="layoutCards">
+          <property name="leftMargin">
+           <number>0</number>
+          </property>
+          <property name="topMargin">
+           <number>0</number>
+          </property>
+          <property name="rightMargin">
+           <number>0</number>
+          </property>
+          <property name="bottomMargin">
+           <number>0</number>
+          </property>
+          <property name="spacing">
+           <number>12</number>
+          </property>
+          <item>
+           <widget class="QFrame" name="cardSardine">
+            <property name="minimumSize">
+             <size>
+              <width>0</width>
+              <height>92</height>
+             </size>
+            </property>
+            <layout class="QHBoxLayout" name="layoutCardSardine">
+             <property name="leftMargin">
+              <number>16</number>
+             </property>
+             <property name="topMargin">
+              <number>12</number>
+             </property>
+             <property name="rightMargin">
+              <number>16</number>
+             </property>
+             <property name="bottomMargin">
+              <number>12</number>
+             </property>
+             <property name="spacing">
+              <number>14</number>
+             </property>
+             <item>
+              <widget class="QLabel" name="lblIconSardine">
+               <property name="text">
+                <string>SRD</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <layout class="QVBoxLayout" name="layoutSardineInfo">
+               <property name="spacing">
+                <number>2</number>
+               </property>
+               <item>
+                <widget class="QLabel" name="lblNameSardine">
+                 <property name="text">
+                  <string>Sardine</string>
+                 </property>
+                </widget>
+               </item>
+               <item>
+                <widget class="QLabel" name="lblCurrentSardine">
+                 <property name="text">
+                  <string>Prix actuel: 6.0 TND/kg</string>
+                 </property>
+                </widget>
+               </item>
+              </layout>
+             </item>
+             <item>
+              <spacer name="spacerCardSardine">
+               <property name="orientation">
+                <enum>Qt::Horizontal</enum>
+               </property>
+               <property name="sizeHint" stdset="0">
+                <size>
+                 <width>40</width>
+                 <height>20</height>
+                </size>
+               </property>
+              </spacer>
+             </item>
+             <item>
+              <layout class="QVBoxLayout" name="layoutSardineRec">
+               <property name="spacing">
+                <number>4</number>
+               </property>
+               <item>
+                <widget class="QLabel" name="lblRecTitleSardine">
+                 <property name="text">
+                  <string>Prix conseillé IA</string>
+                 </property>
+                </widget>
+               </item>
+               <item>
+                <widget class="QLabel" name="lblRecRangeSardine">
+                 <property name="text">
+                  <string>6.5 - 7.2 TND/kg</string>
+                 </property>
+                </widget>
+               </item>
+              </layout>
+             </item>
+             <item>
+              <layout class="QVBoxLayout" name="layoutSardineBadges">
+               <property name="spacing">
+                <number>6</number>
+               </property>
+               <item>
+                <widget class="QLabel" name="lblDeltaSardine">
+                 <property name="text">
+                  <string>+0.8</string>
+                 </property>
+                 <property name="alignment">
+                  <set>Qt::AlignCenter</set>
+                 </property>
+                </widget>
+               </item>
+               <item>
+                <widget class="QLabel" name="lblAvisSardine">
+                 <property name="text">
+                  <string>Hausse prudente</string>
+                 </property>
+                 <property name="alignment">
+                  <set>Qt::AlignCenter</set>
+                 </property>
+                </widget>
+               </item>
+              </layout>
+             </item>
+            </layout>
+           </widget>
+          </item>
+          <item>
+           <widget class="QFrame" name="cardCalamar">
+            <property name="minimumSize">
+             <size>
+              <width>0</width>
+              <height>92</height>
+             </size>
+            </property>
+            <layout class="QHBoxLayout" name="layoutCardCalamar">
+             <property name="leftMargin">
+              <number>16</number>
+             </property>
+             <property name="topMargin">
+              <number>12</number>
+             </property>
+             <property name="rightMargin">
+              <number>16</number>
+             </property>
+             <property name="bottomMargin">
+              <number>12</number>
+             </property>
+             <property name="spacing">
+              <number>14</number>
+             </property>
+             <item>
+              <widget class="QLabel" name="lblIconCalamar">
+               <property name="text">
+                <string>CLM</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <layout class="QVBoxLayout" name="layoutCalamarInfo">
+               <property name="spacing">
+                <number>2</number>
+               </property>
+               <item>
+                <widget class="QLabel" name="lblNameCalamar">
+                 <property name="text">
+                  <string>Calamar</string>
+                 </property>
+                </widget>
+               </item>
+               <item>
+                <widget class="QLabel" name="lblCurrentCalamar">
+                 <property name="text">
+                  <string>Prix actuel: 11.0 TND/kg</string>
+                 </property>
+                </widget>
+               </item>
+              </layout>
+             </item>
+             <item>
+              <spacer name="spacerCardCalamar">
+               <property name="orientation">
+                <enum>Qt::Horizontal</enum>
+               </property>
+               <property name="sizeHint" stdset="0">
+                <size>
+                 <width>40</width>
+                 <height>20</height>
+                </size>
+               </property>
+              </spacer>
+             </item>
+             <item>
+              <layout class="QVBoxLayout" name="layoutCalamarRec">
+               <property name="spacing">
+                <number>4</number>
+               </property>
+               <item>
+                <widget class="QLabel" name="lblRecTitleCalamar">
+                 <property name="text">
+                  <string>Prix conseillé IA</string>
+                 </property>
+                </widget>
+               </item>
+               <item>
+                <widget class="QLabel" name="lblRecRangeCalamar">
+                 <property name="text">
+                  <string>10.8 - 11.4 TND/kg</string>
+                 </property>
+                </widget>
+               </item>
+              </layout>
+             </item>
+             <item>
+              <layout class="QVBoxLayout" name="layoutCalamarBadges">
+               <property name="spacing">
+                <number>6</number>
+               </property>
+               <item>
+                <widget class="QLabel" name="lblDeltaCalamar">
+                 <property name="text">
+                  <string>+0.2</string>
+                 </property>
+                 <property name="alignment">
+                  <set>Qt::AlignCenter</set>
+                 </property>
+                </widget>
+               </item>
+               <item>
+                <widget class="QLabel" name="lblAvisCalamar">
+                 <property name="text">
+                  <string>Ajustement discret</string>
+                 </property>
+                 <property name="alignment">
+                  <set>Qt::AlignCenter</set>
+                 </property>
+                </widget>
+               </item>
+              </layout>
+             </item>
+            </layout>
+           </widget>
+          </item>
+          <item>
+           <widget class="QFrame" name="cardDorade">
+            <property name="minimumSize">
+             <size>
+              <width>0</width>
+              <height>92</height>
+             </size>
+            </property>
+            <layout class="QHBoxLayout" name="layoutCardDorade">
+             <property name="leftMargin">
+              <number>16</number>
+             </property>
+             <property name="topMargin">
+              <number>12</number>
+             </property>
+             <property name="rightMargin">
+              <number>16</number>
+             </property>
+             <property name="bottomMargin">
+              <number>12</number>
+             </property>
+             <property name="spacing">
+              <number>14</number>
+             </property>
+             <item>
+              <widget class="QLabel" name="lblIconDorade">
+               <property name="text">
+                <string>DRD</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <layout class="QVBoxLayout" name="layoutDoradeInfo">
+               <property name="spacing">
+                <number>2</number>
+               </property>
+               <item>
+                <widget class="QLabel" name="lblNameDorade">
+                 <property name="text">
+                  <string>Dorade</string>
+                 </property>
+                </widget>
+               </item>
+               <item>
+                <widget class="QLabel" name="lblCurrentDorade">
+                 <property name="text">
+                  <string>Prix actuel: 18.5 TND/kg</string>
+                 </property>
+                </widget>
+               </item>
+              </layout>
+             </item>
+             <item>
+              <spacer name="spacerCardDorade">
+               <property name="orientation">
+                <enum>Qt::Horizontal</enum>
+               </property>
+               <property name="sizeHint" stdset="0">
+                <size>
+                 <width>40</width>
+                 <height>20</height>
+                </size>
+               </property>
+              </spacer>
+             </item>
+             <item>
+              <layout class="QVBoxLayout" name="layoutDoradeRec">
+               <property name="spacing">
+                <number>4</number>
+               </property>
+               <item>
+                <widget class="QLabel" name="lblRecTitleDorade">
+                 <property name="text">
+                  <string>Prix conseillé IA</string>
+                 </property>
+                </widget>
+               </item>
+               <item>
+                <widget class="QLabel" name="lblRecRangeDorade">
+                 <property name="text">
+                  <string>17.5 - 18.0 TND/kg</string>
+                 </property>
+                </widget>
+               </item>
+              </layout>
+             </item>
+             <item>
+              <layout class="QVBoxLayout" name="layoutDoradeBadges">
+               <property name="spacing">
+                <number>6</number>
+               </property>
+               <item>
+                <widget class="QLabel" name="lblDeltaDorade">
+                 <property name="text">
+                  <string>-0.6</string>
+                 </property>
+                 <property name="alignment">
+                  <set>Qt::AlignCenter</set>
+                 </property>
+                </widget>
+               </item>
+               <item>
+                <widget class="QLabel" name="lblAvisDorade">
+                 <property name="text">
+                  <string>Baisse à valider</string>
+                 </property>
+                 <property name="alignment">
+                  <set>Qt::AlignCenter</set>
+                 </property>
+                </widget>
+               </item>
+              </layout>
+             </item>
+            </layout>
+           </widget>
+          </item>
+          <item>
+           <widget class="QFrame" name="calloutFrame">
+            <layout class="QHBoxLayout" name="layoutCallout">
+             <property name="leftMargin">
+              <number>12</number>
+             </property>
+             <property name="topMargin">
+              <number>10</number>
+             </property>
+             <property name="rightMargin">
+              <number>12</number>
+             </property>
+             <property name="bottomMargin">
+              <number>10</number>
+             </property>
+             <property name="spacing">
+              <number>8</number>
+             </property>
+             <item>
+              <widget class="QLabel" name="lblCalloutIcon">
+               <property name="text">
+                <string>i</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QLabel" name="lblCalloutText">
+               <property name="text">
+                <string>Certaines recommandations IA présentent un écart significatif sur les lots. Une validation manuelle est conseillée.</string>
+               </property>
+               <property name="wordWrap">
+                <bool>true</bool>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </widget>
+          </item>
+         </layout>
+        </widget>
+        <widget class="QWidget" name="pageTable">
+         <layout class="QVBoxLayout" name="layoutTable">
+          <property name="leftMargin">
+           <number>0</number>
+          </property>
+          <property name="topMargin">
+           <number>0</number>
+          </property>
+          <property name="rightMargin">
+           <number>0</number>
+          </property>
+          <property name="bottomMargin">
+           <number>0</number>
+          </property>
+          <item>
+           <widget class="QTableWidget" name="tableDynamicPricing"/>
+          </item>
+         </layout>
+        </widget>
+       </widget>
+      </item>
+     </layout>
+    </widget>
+   </item>
+   <item>
+    <widget class="QWidget" name="rowButtons">
+     <layout class="QHBoxLayout" name="layoutButtons">
+      <property name="leftMargin">
+       <number>0</number>
+      </property>
+      <property name="topMargin">
+       <number>0</number>
+      </property>
+      <property name="rightMargin">
+       <number>0</number>
+      </property>
+      <property name="bottomMargin">
+       <number>0</number>
+      </property>
+      <property name="spacing">
+       <number>8</number>
+      </property>
+      <item>
+       <spacer name="spacerButtons">
+        <property name="orientation">
+         <enum>Qt::Horizontal</enum>
+        </property>
+        <property name="sizeHint" stdset="0">
+         <size>
+          <width>40</width>
+          <height>20</height>
+         </size>
+        </property>
+       </spacer>
+      </item>
+      <item>
+       <widget class="QPushButton" name="btnExport">
+        <property name="text">
+         <string>Exporter recommandations</string>
+        </property>
+        <property name="enabled">
+         <bool>false</bool>
+        </property>
+        <property name="cursor">
+         <cursorShape>PointingHandCursor</cursorShape>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="btnClose">
+        <property name="text">
+         <string>Fermer</string>
+        </property>
+        <property name="cursor">
+         <cursorShape>PointingHandCursor</cursorShape>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </widget>
+   </item>
+  </layout>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
+
+
+
+
+
+
+

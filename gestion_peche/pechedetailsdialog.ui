@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>PecheDetailsDialog</class>
+ <widget class="QDialog" name="PecheDetailsDialog">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>740</width>
+    <height>560</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Détails du lot de pêche</string>
+  </property>
+  <layout class="QVBoxLayout" name="verticalLayout">
+   <item>
+    <widget class="QScrollArea" name="scrollArea">
+     <property name="widgetResizable">
+      <bool>true</bool>
+     </property>
+     <widget class="QWidget" name="scrollAreaWidgetContents">
+      <layout class="QVBoxLayout" name="contentLayout">
+       <item>
+        <widget class="QGroupBox" name="groupDetails">
+         <property name="title">
+          <string>Détails</string>
+         </property>
+         <layout class="QFormLayout" name="formDetails">
+          <item row="0" column="0">
+           <widget class="QLabel" name="labelIdPeche">
+            <property name="text">
+             <string>IDPECHE</string>
+            </property>
+           </widget>
+          </item>
+          <item row="0" column="1">
+           <widget class="QLabel" name="valueIdPeche"/>
+          </item>
+          <item row="1" column="0">
+           <widget class="QLabel" name="labelDatePeche">
+            <property name="text">
+             <string>Date débarquement</string>
+            </property>
+           </widget>
+          </item>
+          <item row="1" column="1">
+           <widget class="QLabel" name="valueDatePeche"/>
+          </item>
+          <item row="2" column="0">
+           <widget class="QLabel" name="labelZone">
+            <property name="text">
+             <string>Zone / Emplacement</string>
+            </property>
+           </widget>
+          </item>
+          <item row="2" column="1">
+           <widget class="QLabel" name="valueZonePeche"/>
+          </item>
+          <item row="3" column="0">
+           <widget class="QLabel" name="labelNavire">
+            <property name="text">
+             <string>Navire</string>
+            </property>
+           </widget>
+          </item>
+          <item row="3" column="1">
+           <widget class="QLabel" name="valueNavire"/>
+          </item>
+          <item row="4" column="0">
+           <widget class="QLabel" name="labelStatut">
+            <property name="text">
+             <string>Statut / Description</string>
+            </property>
+           </widget>
+          </item>
+          <item row="4" column="1">
+           <widget class="QLabel" name="valueStatut">
+            <property name="wordWrap">
+             <bool>true</bool>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </widget>
+       </item>
+       <item>
+        <widget class="QGroupBox" name="groupEspeces">
+         <property name="title">
+          <string>Espèces</string>
+         </property>
+         <layout class="QVBoxLayout" name="layoutEspeces">
+          <item>
+           <widget class="QTableWidget" name="tableEspeces"/>
+          </item>
+         </layout>
+        </widget>
+       </item>
+       <item>
+        <widget class="QGroupBox" name="groupEmployes">
+         <property name="title">
+          <string>Employés</string>
+         </property>
+         <layout class="QVBoxLayout" name="layoutEmployes">
+          <item>
+           <widget class="QTableWidget" name="tableEmployes"/>
+          </item>
+         </layout>
+        </widget>
+       </item>
+       <item>
+        <spacer name="verticalSpacer">
+         <property name="orientation">
+          <enum>Qt::Vertical</enum>
+         </property>
+         <property name="sizeHint" stdset="0">
+          <size>
+           <width>20</width>
+           <height>20</height>
+          </size>
+         </property>
+        </spacer>
+       </item>
+      </layout>
+     </widget>
+    </widget>
+   </item>
+   <item>
+    <layout class="QHBoxLayout" name="footerLayout">
+     <item>
+      <spacer name="footerSpacer">
+       <property name="orientation">
+        <enum>Qt::Horizontal</enum>
+       </property>
+       <property name="sizeHint" stdset="0">
+        <size>
+         <width>40</width>
+         <height>20</height>
+        </size>
+       </property>
+      </spacer>
+     </item>
+     <item>
+      <widget class="QPushButton" name="btnClose">
+       <property name="text">
+        <string>Fermer</string>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </item>
+  </layout>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

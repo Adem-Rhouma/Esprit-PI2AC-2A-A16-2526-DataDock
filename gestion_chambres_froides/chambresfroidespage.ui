@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>ChambresFroidesPage</class>
+ <widget class="QWidget" name="ChambresFroidesPage">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1100</width>
+    <height>700</height>
+   </rect>
+  </property>
+  <layout class="QVBoxLayout" name="verticalLayout">
+   <property name="spacing">
+    <number>20</number>
+   </property>
+   <property name="leftMargin">
+    <number>30</number>
+   </property>
+   <property name="topMargin">
+    <number>30</number>
+   </property>
+   <property name="rightMargin">
+    <number>30</number>
+   </property>
+   <property name="bottomMargin">
+    <number>30</number>
+   </property>
+   <item>
+    <layout class="QHBoxLayout" name="headerLayout">
+     <item>
+      <layout class="QVBoxLayout" name="titleLayout">
+       <property name="spacing">
+        <number>4</number>
+       </property>
+       <item>
+        <widget class="QLabel" name="lblTitle">
+         <property name="text">
+          <string>Gestion des Chambres Froides</string>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">font-size: 24px; font-weight: bold; color: #2C3E50;</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QLabel" name="lblSubtitle">
+         <property name="text">
+          <string>Gérez les stocks, températures et états des équipements</string>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">font-size: 14px; color: #7F8C8D;</string>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </item>
+     <item>
+      <spacer name="horizontalSpacer">
+       <property name="orientation">
+        <enum>Qt::Horizontal</enum>
+       </property>
+       <property name="sizeHint" stdset="0">
+        <size>
+         <width>40</width>
+         <height>20</height>
+        </size>
+       </property>
+      </spacer>
+     </item>
+     <item>
+      <widget class="QPushButton" name="btnAddChambre">
+       <property name="text">
+        <string>+ Nouvelle Chambre</string>
+       </property>
+       <property name="cursor">
+        <cursorShape>PointingHandCursor</cursorShape>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">
+            QPushButton {
+                background-color: #3498db; 
+                color: white; 
+                padding: 10px 20px; 
+                border-radius: 5px; 
+                font-weight: bold;
+            }
+            QPushButton:hover {
+                background-color: #2980b9;
+            }
+        </string>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </item>
+   <item>
+    <layout class="QHBoxLayout" name="filterLayout">
+     <property name="spacing">
+      <number>10</number>
+     </property>
+     <item>
+      <widget class="QLineEdit" name="searchBar">
+       <property name="placeholderText">
+        <string>Rechercher par ID, Espèce...</string>
+       </property>
+       <property name="minimumHeight">
+        <number>40</number>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QComboBox" name="comboSortField">
+       <property name="minimumHeight">
+        <number>40</number>
+       </property>
+       <item>
+        <property name="text">
+         <string>Trier par État</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Trier par Température</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Trier par Capacité</string>
+        </property>
+       </item>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="btnExport">
+       <property name="text">
+        <string>Exporter</string>
+       </property>
+       <property name="minimumHeight">
+        <number>40</number>
+       </property>
+       <property name="cursor">
+        <cursorShape>PointingHandCursor</cursorShape>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </item>
+   <item>
+    <widget class="QTableWidget" name="tableChambres">
+     <property name="frameShape">
+      <enum>QFrame::NoFrame</enum>
+     </property>
+     <property name="showGrid">
+      <bool>false</bool>
+     </property>
+     <property name="sortingEnabled">
+      <bool>true</bool>
+     </property>
+     <attribute name="horizontalHeaderStretchLastSection">
+      <bool>true</bool>
+     </attribute>
+     <attribute name="verticalHeaderVisible">
+      <bool>false</bool>
+     </attribute>
+    </widget>
+   </item>
+  </layout>
+ </widget>
+</ui>

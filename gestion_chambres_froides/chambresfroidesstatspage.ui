@@ -1,0 +1,226 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>ChambresFroidesStatsPage</class>
+ <widget class="QWidget" name="ChambresFroidesStatsPage">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1045</width>
+    <height>689</height>
+   </rect>
+  </property>
+  <layout class="QVBoxLayout" name="mainLayout">
+   <item>
+    <widget class="QScrollArea" name="scrollArea">
+     <property name="widgetResizable">
+      <bool>true</bool>
+     </property>
+     <property name="frameShape">
+      <enum>QFrame::NoFrame</enum>
+     </property>
+     <widget class="QWidget" name="scrollAreaWidgetContents">
+      <layout class="QVBoxLayout" name="verticalLayout">
+       <property name="spacing">
+        <number>20</number>
+       </property>
+       <property name="leftMargin">
+        <number>30</number>
+       </property>
+       <property name="topMargin">
+        <number>30</number>
+       </property>
+       <property name="rightMargin">
+        <number>30</number>
+       </property>
+       <property name="bottomMargin">
+        <number>30</number>
+       </property>
+       <item>
+        <layout class="QHBoxLayout" name="headerLayout">
+         <item>
+          <layout class="QVBoxLayout" name="titleLayout">
+           <property name="spacing">
+            <number>4</number>
+           </property>
+           <item>
+            <widget class="QLabel" name="lblTitle">
+             <property name="text">
+              <string>Statistiques Chambres Froides</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QLabel" name="lblSubtitle">
+             <property name="text">
+              <string>Analyse des températures, stocks et état des équipements</string>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </item>
+         <item>
+          <spacer name="horizontalSpacer">
+           <property name="orientation">
+            <enum>Qt::Horizontal</enum>
+           </property>
+           <property name="sizeHint" stdset="0">
+            <size>
+             <width>40</width>
+             <height>20</height>
+            </size>
+           </property>
+          </spacer>
+         </item>
+         <item>
+          <widget class="QPushButton" name="btnRefresh">
+           <property name="text">
+            <string>Actualiser</string>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </item>
+       <item>
+        <layout class="QHBoxLayout" name="kpiLayout">
+         <property name="spacing">
+          <number>20</number>
+         </property>
+         <item>
+          <widget class="QFrame" name="cardKpiTemp">
+           <layout class="QVBoxLayout" name="vlKpi1">
+            <item>
+             <widget class="QLabel" name="lblKpiTempTitle">
+              <property name="text">
+               <string>Temp. Moyenne</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QLabel" name="lblKpiTempValue">
+              <property name="text">
+               <string>-18.5 °C</string>
+              </property>
+             </widget>
+            </item>
+           </layout>
+          </widget>
+         </item>
+         <item>
+          <widget class="QFrame" name="cardKpiStock">
+           <layout class="QVBoxLayout" name="vlKpi2">
+            <item>
+             <widget class="QLabel" name="lblKpiStockTitle">
+              <property name="text">
+               <string>Stock Total</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QLabel" name="lblKpiStockValue">
+              <property name="text">
+               <string>12.4 kg</string>
+              </property>
+             </widget>
+            </item>
+           </layout>
+          </widget>
+         </item>
+         <item>
+          <widget class="QFrame" name="cardKpiActive">
+           <layout class="QVBoxLayout" name="vlKpi3">
+            <item>
+             <widget class="QLabel" name="lblKpiActiveTitle">
+              <property name="text">
+               <string>Chambres Actives</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QLabel" name="lblKpiActiveValue">
+              <property name="text">
+               <string>5 / 6</string>
+              </property>
+             </widget>
+            </item>
+           </layout>
+          </widget>
+         </item>
+        </layout>
+       </item>
+       <item>
+        <layout class="QGridLayout" name="chartsLayout">
+         <property name="spacing">
+          <number>20</number>
+         </property>
+         <item row="0" column="0" colspan="2">
+          <widget class="QFrame" name="cardChartTemp">
+           <property name="minimumSize">
+            <size>
+             <width>0</width>
+             <height>450</height>
+            </size>
+           </property>
+           <layout class="QVBoxLayout" name="vlChart1">
+            <item>
+             <widget class="QLabel" name="lblChartTempTitle">
+              <property name="text">
+               <string>Évolution des Températures</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QWidget" name="chartTempContainer" native="true"/>
+            </item>
+           </layout>
+          </widget>
+         </item>
+         <item row="1" column="0" colspan="2">
+          <widget class="QFrame" name="cardChartStatus">
+           <property name="minimumSize">
+            <size>
+             <width>0</width>
+             <height>350</height>
+            </size>
+           </property>
+           <layout class="QHBoxLayout" name="hlChart3">
+            <item>
+             <layout class="QVBoxLayout" name="vlChart3Left">
+              <item>
+               <widget class="QLabel" name="lblChartStatusTitle">
+                <property name="text">
+                 <string>État des Chambres</string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QWidget" name="chartStatusContainer" native="true"/>
+              </item>
+             </layout>
+            </item>
+            <item>
+             <layout class="QVBoxLayout" name="vlChart3Right">
+              <item>
+               <widget class="QLabel" name="lblChartSpeciesTitle">
+                <property name="text">
+                 <string>Répartition par Espèce</string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QWidget" name="chartSpeciesContainer" native="true"/>
+              </item>
+             </layout>
+            </item>
+           </layout>
+          </widget>
+         </item>
+        </layout>
+       </item>
+      </layout>
+     </widget>
+    </widget>
+   </item>
+  </layout>
+ </widget>
+</ui>

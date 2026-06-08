@@ -1,0 +1,312 @@
+[
+  {
+    "species": "Thon",
+    "sensitivity": "High",
+    "degradation_speed": 0.05,
+    "optimal_temp_range": [
+      -25,
+      -20
+    ],
+    "humidity_preference": 85
+  },
+  {
+    "species": "Saumon",
+    "sensitivity": "Medium",
+    "degradation_speed": 0.03,
+    "optimal_temp_range": [
+      -20,
+      -18
+    ],
+    "humidity_preference": 90
+  },
+  {
+    "species": "Sardine",
+    "sensitivity": "High",
+    "degradation_speed": 0.08,
+    "optimal_temp_range": [
+      -5,
+      -2
+    ],
+    "humidity_preference": 80
+  },
+  {
+    "species": "Maquereau",
+    "sensitivity": "Medium",
+    "degradation_speed": 0.04,
+    "optimal_temp_range": [
+      -22,
+      -18
+    ],
+    "humidity_preference": 85
+  },
+  {
+    "species": "Merlu",
+    "sensitivity": "Low",
+    "degradation_speed": 0.03,
+    "optimal_temp_range": [
+      -18,
+      -15
+    ],
+    "humidity_preference": 85
+  },
+  {
+    "species": "Morue",
+    "sensitivity": "Medium",
+    "degradation_speed": 0.04,
+    "optimal_temp_range": [
+      -18,
+      -15
+    ],
+    "humidity_preference": 85
+  },
+  {
+    "species": "Cabillaud",
+    "sensitivity": "Medium",
+    "degradation_speed": 0.04,
+    "optimal_temp_range": [
+      -18,
+      -15
+    ],
+    "humidity_preference": 85
+  },
+  {
+    "species": "Crevette",
+    "sensitivity": "High",
+    "degradation_speed": 0.07,
+    "optimal_temp_range": [
+      -25,
+      -22
+    ],
+    "humidity_preference": 95
+  },
+  {
+    "species": "Homard",
+    "sensitivity": "Medium",
+    "degradation_speed": 0.05,
+    "optimal_temp_range": [
+      -2,
+      2
+    ],
+    "humidity_preference": 100
+  },
+  {
+    "species": "Bar",
+    "sensitivity": "Medium",
+    "degradation_speed": 0.04,
+    "optimal_temp_range": [
+      -18,
+      -15
+    ],
+    "humidity_preference": 85
+  },
+  {
+    "species": "Daurade",
+    "sensitivity": "Medium",
+    "degradation_speed": 0.04,
+    "optimal_temp_range": [
+      -18,
+      -15
+    ],
+    "humidity_preference": 85
+  },
+  {
+    "species": "Sole",
+    "sensitivity": "Low",
+    "degradation_speed": 0.02,
+    "optimal_temp_range": [
+      -15,
+      -12
+    ],
+    "humidity_preference": 85
+  },
+  {
+    "species": "Colin",
+    "sensitivity": "Low",
+    "degradation_speed": 0.03,
+    "optimal_temp_range": [
+      -18,
+      -15
+    ],
+    "humidity_preference": 85
+  },
+  {
+    "species": "Anchois",
+    "sensitivity": "High",
+    "degradation_speed": 0.09,
+    "optimal_temp_range": [
+      -5,
+      -2
+    ],
+    "humidity_preference": 80
+  },
+  {
+    "species": "Truite",
+    "sensitivity": "Medium",
+    "degradation_speed": 0.04,
+    "optimal_temp_range": [
+      -15,
+      -10
+    ],
+    "humidity_preference": 90
+  },
+  {
+    "species": "Poulpe",
+    "sensitivity": "Medium",
+    "degradation_speed": 0.05,
+    "optimal_temp_range": [
+      -22,
+      -18
+    ],
+    "humidity_preference": 90
+  },
+  {
+    "species": "Seiche",
+    "sensitivity": "Medium",
+    "degradation_speed": 0.05,
+    "optimal_temp_range": [
+      -20,
+      -18
+    ],
+    "humidity_preference": 90
+  },
+  {
+    "species": "Calamar",
+    "sensitivity": "Medium",
+    "degradation_speed": 0.05,
+    "optimal_temp_range": [
+      -20,
+      -18
+    ],
+    "humidity_preference": 90
+  },
+  {
+    "species": "Espadon",
+    "sensitivity": "High",
+    "degradation_speed": 0.04,
+    "optimal_temp_range": [
+      -25,
+      -20
+    ],
+    "humidity_preference": 85
+  },
+  {
+    "species": "Flétan",
+    "sensitivity": "Low",
+    "degradation_speed": 0.02,
+    "optimal_temp_range": [
+      -20,
+      -18
+    ],
+    "humidity_preference": 85
+  },
+  {
+    "species": "Lieu Noir",
+    "sensitivity": "Low",
+    "degradation_speed": 0.03,
+    "optimal_temp_range": [
+      -18,
+      -15
+    ],
+    "humidity_preference": 85
+  },
+  {
+    "species": "Lieu Jaune",
+    "sensitivity": "Low",
+    "degradation_speed": 0.03,
+    "optimal_temp_range": [
+      -18,
+      -15
+    ],
+    "humidity_preference": 85
+  },
+  {
+    "species": "Rascasse",
+    "sensitivity": "Medium",
+    "degradation_speed": 0.04,
+    "optimal_temp_range": [
+      -15,
+      -12
+    ],
+    "humidity_preference": 85
+  },
+  {
+    "species": "Turbot",
+    "sensitivity": "Low",
+    "degradation_speed": 0.02,
+    "optimal_temp_range": [
+      -18,
+      -15
+    ],
+    "humidity_preference": 85
+  },
+  {
+    "species": "Saint-Pierre",
+    "sensitivity": "Medium",
+    "degradation_speed": 0.04,
+    "optimal_temp_range": [
+      -15,
+      -12
+    ],
+    "humidity_preference": 85
+  },
+  {
+    "species": "Mulet",
+    "sensitivity": "Medium",
+    "degradation_speed": 0.05,
+    "optimal_temp_range": [
+      -10,
+      -5
+    ],
+    "humidity_preference": 80
+  },
+  {
+    "species": "Congre",
+    "sensitivity": "Low",
+    "degradation_speed": 0.03,
+    "optimal_temp_range": [
+      -15,
+      -10
+    ],
+    "humidity_preference": 80
+  },
+  {
+    "species": "Raie",
+    "sensitivity": "Medium",
+    "degradation_speed": 0.04,
+    "optimal_temp_range": [
+      -15,
+      -10
+    ],
+    "humidity_preference": 85
+  },
+  {
+    "species": "Hareng",
+    "sensitivity": "High",
+    "degradation_speed": 0.07,
+    "optimal_temp_range": [
+      -20,
+      -18
+    ],
+    "humidity_preference": 85
+  },
+  {
+    "species": "Eglefin",
+    "sensitivity": "Medium",
+    "degradation_speed": 0.04,
+    "optimal_temp_range": [
+      -18,
+      -15
+    ],
+    "humidity_preference": 85
+  },
+  {
+    "species": "Carpaccio de Saumon",
+    "sensitivity": "High",
+    "degradation_speed": 0.06,
+    "optimal_temp_range": [
+      -22,
+      -20
+    ],
+    "humidity_preference": 90
+  }
+]

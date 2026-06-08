@@ -1,0 +1,46 @@
+-IC:/Qt/6.7.3/mingw_64/mkspecs/win32-g++
+-IC:/Users/moonm/OneDrive/Desktop/2a16-smart-fishing-port-management
+-IC:/Qt/6.7.3/mingw_64/include
+-IC:/Qt/6.7.3/mingw_64/include/QtMultimedia
+-IC:/Qt/6.7.3/mingw_64/include/QtCharts
+-IC:/Qt/6.7.3/mingw_64/include/QtOpenGLWidgets
+-IC:/Qt/6.7.3/mingw_64/include/QtPrintSupport
+-IC:/Qt/6.7.3/mingw_64/include/QtQuickWidgets
+-IC:/Qt/6.7.3/mingw_64/include/QtWidgets
+-IC:/Qt/6.7.3/mingw_64/include/QtLocation
+-IC:/Qt/6.7.3/mingw_64/include/QtPositioningQuick
+-IC:/Qt/6.7.3/mingw_64/include/QtQuickShapes
+-IC:/Qt/6.7.3/mingw_64/include/QtQuickShapes/6.7.3
+-IC:/Qt/6.7.3/mingw_64/include/QtQuickShapes/6.7.3/QtQuickShapes
+-IC:/Qt/6.7.3/mingw_64/include/QtQuick/6.7.3
+-IC:/Qt/6.7.3/mingw_64/include/QtQuick/6.7.3/QtQuick
+-IC:/Qt/6.7.3/mingw_64/include/QtQuick
+-IC:/Qt/6.7.3/mingw_64/include/QtOpenGL
+-IC:/Qt/6.7.3/mingw_64/include/QtGui/6.7.3
+-IC:/Qt/6.7.3/mingw_64/include/QtGui/6.7.3/QtGui
+-IC:/Qt/6.7.3/mingw_64/include/QtGui
+-IC:/Qt/6.7.3/mingw_64/include/QtSql
+-IC:/Qt/6.7.3/mingw_64/include/QtQmlModels/6.7.3
+-IC:/Qt/6.7.3/mingw_64/include/QtQmlModels/6.7.3/QtQmlModels
+-IC:/Qt/6.7.3/mingw_64/include/QtQmlModels
+-IC:/Qt/6.7.3/mingw_64/include/QtQml/6.7.3
+-IC:/Qt/6.7.3/mingw_64/include/QtQml/6.7.3/QtQml
+-IC:/Qt/6.7.3/mingw_64/include/QtQml
+-IC:/Qt/6.7.3/mingw_64/include/QtNetwork
+-IC:/Qt/6.7.3/mingw_64/include/QtQmlIntegration
+-IC:/Qt/6.7.3/mingw_64/include/QtPositioning
+-IC:/Qt/6.7.3/mingw_64/include/QtCore/6.7.3
+-IC:/Qt/6.7.3/mingw_64/include/QtCore/6.7.3/QtCore
+-IC:/Qt/6.7.3/mingw_64/include/QtTest
+-IC:/Qt/6.7.3/mingw_64/include/QtSerialPort
+-IC:/Qt/6.7.3/mingw_64/include/QtCore
+-IC:/Qt/6.7.3/mingw_64/include/QtQmlBuiltins/6.7.3
+-IC:/Qt/6.7.3/mingw_64/include/QtQmlBuiltins/6.7.3/QtQmlBuiltins
+-IC:/Qt/6.7.3/mingw_64/include/QtQmlBuiltins
+-IC:/Program Files/CodeBlocks/MinGW/include/c++/14.2.0
+-IC:/Program Files/CodeBlocks/MinGW/include/c++/14.2.0/x86_64-w64-mingw32
+-IC:/Program Files/CodeBlocks/MinGW/include/c++/14.2.0/backward
+-IC:/Program Files/CodeBlocks/MinGW/lib/gcc/x86_64-w64-mingw32/14.2.0/include
+-IC:/Program Files/CodeBlocks/MinGW/include
+-IC:/Program Files/CodeBlocks/MinGW/lib/gcc/x86_64-w64-mingw32/14.2.0/include-fixed
+-IC:/Program Files/CodeBlocks/MinGW/x86_64-w64-mingw32/include

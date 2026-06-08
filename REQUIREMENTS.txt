@@ -1,0 +1,41 @@
+================================================================================
+DataDock - Project Requirements
+================================================================================
+
+1. C++ ENVIRONMENT
+------------------
+- C++17 Compiler (g++ or MSVC)
+- Build Essentials (make, cmake)
+
+2. Qt DEPENDENCIES (Qt 6.x recommended)
+----------------------------------------
+The following modules must be installed:
+- core
+- gui
+- widgets
+- sql (with database driver for Oracle/ODBC)
+- network
+- charts
+- printsupport
+- quickwidgets
+- quick
+- qml
+- location
+- positioning
+
+3. PYTHON AI PREDICTOR (Python 3.8+)
+------------------------------------
+Install the following libraries using pip:
+- pandas
+- numpy
+- catboost
+- scikit-learn
+- ollama
+
+How to install Python requirements:
+pip install pandas numpy catboost scikit-learn
+
+4. DATA SOURCE
+--------------
+- Oracle Database or equivalent SQL database configured in connection.cp
+================================================================================

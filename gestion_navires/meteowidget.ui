@@ -1,0 +1,317 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MeteoWidget</class>
+ <widget class="QWidget" name="MeteoWidget">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1000</width>
+    <height>700</height>
+   </rect>
+  </property>
+  <property name="styleSheet">
+   <string>background: transparent;</string>
+  </property>
+  <layout class="QVBoxLayout" name="rootLayout">
+   <property name="spacing">
+    <number>0</number>
+   </property>
+   <property name="leftMargin">
+    <number>0</number>
+   </property>
+   <property name="topMargin">
+    <number>0</number>
+   </property>
+   <property name="rightMargin">
+    <number>0</number>
+   </property>
+   <property name="bottomMargin">
+    <number>0</number>
+   </property>
+   <item>
+    <widget class="QScrollArea" name="scrollArea">
+     <property name="frameShape">
+      <enum>QFrame::Shape::NoFrame</enum>
+     </property>
+     <property name="widgetResizable">
+      <bool>true</bool>
+     </property>
+     <widget class="QWidget" name="scrollAreaWidgetContents">
+      <property name="geometry">
+       <rect>
+        <x>0</x>
+        <y>0</y>
+        <width>1000</width>
+        <height>700</height>
+       </rect>
+      </property>
+      <layout class="QVBoxLayout" name="contentLayout">
+       <property name="spacing">
+        <number>20</number>
+       </property>
+       <property name="leftMargin">
+        <number>24</number>
+       </property>
+       <property name="topMargin">
+        <number>24</number>
+       </property>
+       <property name="rightMargin">
+        <number>24</number>
+       </property>
+       <property name="bottomMargin">
+        <number>24</number>
+       </property>
+       <item>
+        <widget class="QWidget" name="headerWidget" native="true">
+         <layout class="QVBoxLayout" name="headerLayout">
+          <property name="spacing">
+           <number>4</number>
+          </property>
+          <property name="leftMargin">
+           <number>0</number>
+          </property>
+          <property name="topMargin">
+           <number>0</number>
+          </property>
+          <property name="rightMargin">
+           <number>0</number>
+          </property>
+          <property name="bottomMargin">
+           <number>0</number>
+          </property>
+          <item>
+           <widget class="QLabel" name="lblTitle">
+            <property name="styleSheet">
+             <string>font-size: 26px; font-weight: 700; color: #0B2545;</string>
+            </property>
+            <property name="text">
+             <string>Météo Marine &amp; Planification</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QLabel" name="lblSubtitle">
+            <property name="styleSheet">
+             <string>font-size: 14px; color: #5390D9; font-weight: 600;</string>
+            </property>
+            <property name="text">
+             <string>Données en temps réel et fenêtres d'accostage optimales</string>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </widget>
+       </item>
+       <item>
+        <widget class="QFrame" name="heroCard">
+         <property name="minimumSize">
+          <size>
+           <width>0</width>
+           <height>180</height>
+          </size>
+         </property>
+         <property name="styleSheet">
+          <string>QFrame#heroCard {
+    background: qlineargradient(x1:0, y1:0, x2:1, y2:1, stop:0 #5390D9, stop:1 #4EA8DE);
+    border-radius: 24px;
+    color: white;
+}</string>
+         </property>
+         <layout class="QHBoxLayout" name="heroLayout">
+          <property name="spacing">
+           <number>30</number>
+          </property>
+          <property name="leftMargin">
+           <number>30</number>
+          </property>
+          <property name="topMargin">
+           <number>30</number>
+          </property>
+          <property name="rightMargin">
+           <number>30</number>
+          </property>
+          <property name="bottomMargin">
+           <number>30</number>
+          </property>
+          <item>
+           <layout class="QVBoxLayout" name="currentConditionsLayout">
+            <item>
+             <widget class="QLabel" name="lblTemp">
+              <property name="styleSheet">
+               <string>font-size: 48px; font-weight: 800; color: white;</string>
+              </property>
+              <property name="text">
+               <string>18°C</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QLabel" name="lblWind">
+              <property name="styleSheet">
+               <string>font-size: 18px; color: rgba(255, 255, 255, 0.9);</string>
+              </property>
+              <property name="text">
+               <string>Vent: 12 kts (Beaufort 3)</string>
+              </property>
+             </widget>
+            </item>
+           </layout>
+          </item>
+          <item>
+           <spacer name="horizontalSpacer_2">
+            <property name="orientation">
+             <enum>Qt::Orientation::Horizontal</enum>
+            </property>
+            <property name="sizeHint" stdset="0">
+             <size>
+              <width>40</width>
+              <height>20</height>
+             </size>
+            </property>
+           </spacer>
+          </item>
+          <item>
+           <widget class="QFrame" name="advisoryBox">
+            <property name="minimumSize">
+             <size>
+              <width>300</width>
+              <height>0</height>
+             </size>
+            </property>
+            <property name="styleSheet">
+             <string>background: rgba(255, 255, 255, 0.15); border-radius: 18px; border: 1px solid rgba(255, 255, 255, 0.2);</string>
+            </property>
+            <layout class="QVBoxLayout" name="advisoryLayout">
+             <item>
+              <widget class="QLabel" name="lblRiskLabel">
+               <property name="styleSheet">
+                <string>font-weight: 700; color: white; font-size: 14px;</string>
+               </property>
+               <property name="text">
+                <string>RISQUE D'ACCOSTAGE</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QLabel" name="lblRiskValue">
+               <property name="styleSheet">
+                <string>font-size: 24px; font-weight: 800; color: #10B981;</string>
+               </property>
+               <property name="text">
+                <string>FAIBLE</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QLabel" name="lblAdvisoryText">
+               <property name="styleSheet">
+                <string>color: white; font-size: 13px;</string>
+               </property>
+               <property name="text">
+                <string>Conditions optimales pour les opérations à quai.</string>
+               </property>
+               <property name="wordWrap">
+                <bool>true</bool>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </widget>
+          </item>
+         </layout>
+        </widget>
+       </item>
+       <item>
+        <widget class="QLabel" name="lblForecastTitle">
+         <property name="styleSheet">
+          <string>font-size: 18px; font-weight: 700; color: #0B2545;</string>
+         </property>
+         <property name="text">
+          <string>Prévisions sur 7 jours</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QWidget" name="forecastContainer" native="true">
+         <property name="minimumSize">
+          <size>
+           <width>0</width>
+           <height>120</height>
+          </size>
+         </property>
+         <layout class="QHBoxLayout" name="forecastLayout">
+          <property name="spacing">
+           <number>12</number>
+          </property>
+          <property name="leftMargin">
+           <number>0</number>
+          </property>
+          <property name="topMargin">
+           <number>0</number>
+          </property>
+          <property name="rightMargin">
+           <number>0</number>
+          </property>
+          <property name="bottomMargin">
+           <number>0</number>
+          </property>
+         </layout>
+        </widget>
+       </item>
+       <item>
+        <widget class="QLabel" name="lblCalendarTitle">
+         <property name="styleSheet">
+          <string>font-size: 18px; font-weight: 700; color: #0B2545;</string>
+         </property>
+         <property name="text">
+          <string>Calendrier mensuel des risques</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QFrame" name="calendarCard">
+         <property name="styleSheet">
+          <string>background: white; border-radius: 20px; border: 1px solid #E3E8EE;</string>
+         </property>
+         <layout class="QGridLayout" name="calendarGrid">
+          <property name="leftMargin">
+           <number>20</number>
+          </property>
+          <property name="topMargin">
+           <number>20</number>
+          </property>
+          <property name="rightMargin">
+           <number>20</number>
+          </property>
+          <property name="bottomMargin">
+           <number>20</number>
+          </property>
+          <property name="spacing">
+           <number>8</number>
+          </property>
+         </layout>
+        </widget>
+       </item>
+       <item>
+        <spacer name="verticalSpacer">
+         <property name="orientation">
+          <enum>Qt::Orientation::Vertical</enum>
+         </property>
+         <property name="sizeHint" stdset="0">
+          <size>
+           <width>20</width>
+           <height>40</height>
+          </size>
+         </property>
+        </spacer>
+       </item>
+      </layout>
+     </widget>
+    </widget>
+   </item>
+  </layout>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

@@ -1,0 +1,25 @@
+﻿<RCC>
+    <qresource prefix="/peche/icons">
+        <file>icons/ic_kpi_total_peche.png</file>
+        <file>icons/ic_kpi_total_achats.png</file>
+        <file>icons/ic_kpi_total_ventes.png</file>
+        <file>icons/ic_kpi_total_tonnes.png</file>
+        <file>icons/ic_chart_line.png</file>
+        <file>icons/ic_chart_donut.png</file>
+        <file>icons/ic_chart_bar.png</file>
+        <file>icons/ic_table_recent.png</file>
+        <file>icons/ic_filter.png</file>
+        <file>icons/ic_calendar.png</file>
+        <file>icons/ic_refresh.png</file>
+        <file>icons/ic_export.png</file>
+        <file>icons/ic_smartservices_dynamic_pricing.png</file>
+        <file>icons/ic_smartservices_fishvision.png</file>
+        <file>icons/ic_chip_ai.png</file>
+        <file>icons/ic_arrow_right.png</file>
+    </qresource>
+    <qresource prefix="/peche/fishvision">
+        <file alias="fishvisionpage.qss">../fishvision/fishvisionpage.qss</file>
+    </qresource>
+</RCC>
+
+

@@ -1,0 +1,41 @@
+<RCC>
+    <qresource prefix="/assets">
+        <file alias="CalSans-Regular.ttf">assets/fonts/CalSans-Regular.ttf</file>
+        <file alias="bg.png">assets/img/bg.png</file>
+        <file alias="chfroide.png">assets/img/chfroide.png</file>
+        <file alias="emp.png">assets/img/emp.png</file>
+        <file alias="equip.png">assets/img/equip.png</file>
+        <file alias="ic_calendar.png">assets/img/ic_calendar.png</file>
+        <file alias="ic_chart_bar.png">assets/img/ic_chart_bar.png</file>
+        <file alias="ic_chart_donut.png">assets/img/ic_chart_donut.png</file>
+        <file alias="ic_chart_line.png">assets/img/ic_chart_line.png</file>
+        <file alias="ic_export.png">assets/img/ic_export.png</file>
+        <file alias="ic_filter.png">assets/img/ic_filter.png</file>
+        <file alias="ic_kpi_total_achats.png">assets/img/ic_kpi_total_achats.png</file>
+        <file alias="ic_kpi_total_tonnes.png">assets/img/ic_kpi_total_tonnes.png</file>
+        <file alias="ic_kpi_total_peche.png">assets/img/ic_kpi_total_peche.png</file>
+        <file alias="ic_kpi_total_ventes.png">assets/img/ic_kpi_total_ventes.png</file>
+        <file alias="ic_refresh.png">assets/img/ic_refresh.png</file>
+        <file alias="ic_table_recent.png">assets/img/ic_table_recent.png</file>
+        <file alias="logis.png">assets/img/logis.png</file>
+        <file alias="logo.png">assets/img/logo.png</file>
+        <file alias="nav.png">assets/img/nav.png</file>
+        <file alias="transac.png">assets/img/transac.png</file>
+        <file alias="winbg.png">assets/img/winbg.png</file>
+        <file alias="lock.svg">gestion_utilisateurs/assets/lock.svg</file>
+        <file alias="user.svg">gestion_utilisateurs/assets/user.svg</file>
+        <file alias="eye.svg">gestion_utilisateurs/assets/eye.svg</file>
+        <file alias="eye_off.svg">gestion_utilisateurs/assets/eye_off.svg</file>
+        <file>assets/img/sta.png</file>
+        <file>assets/img/logo1.png</file>
+        <file alias="ic_export_stats.png">assets/img/ic_export_stats.png</file>
+    </qresource>
+    <qresource prefix="/logistique">
+        <file alias="camion_citerne.jpg">gestion_logistique/assets/img/camion_citerne.jpg</file>
+        <file alias="camion_conteneur.jpg">gestion_logistique/assets/img/camion_conteneur.jpg</file>
+        <file alias="camion_refrigere.jpeg">gestion_logistique/assets/img/camion_refrigere.jpeg</file>
+        <file alias="camion_standard.png">gestion_logistique/assets/img/camion_standard.png</file>
+        <file alias="MapWidget.qml">gestion_logistique/views/MapWidget.qml</file>
+    </qresource>
+    <qresource prefix="/"/>
+</RCC>

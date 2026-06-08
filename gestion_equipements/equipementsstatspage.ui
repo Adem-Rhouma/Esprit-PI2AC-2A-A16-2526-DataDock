@@ -1,0 +1,739 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>EquipementsStatsPage</class>
+ <widget class="QWidget" name="EquipementsStatsPage">
+  <property name="styleSheet">
+   <string>background: transparent;</string>
+  </property>
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1170</width>
+    <height>720</height>
+   </rect>
+  </property>
+  <layout class="QVBoxLayout" name="mainLayout">
+   <property name="leftMargin">
+    <number>16</number>
+   </property>
+   <property name="topMargin">
+    <number>16</number>
+   </property>
+   <property name="rightMargin">
+    <number>16</number>
+   </property>
+   <property name="bottomMargin">
+    <number>16</number>
+   </property>
+   <property name="spacing">
+    <number>14</number>
+   </property>
+   <item>
+    <widget class="QWidget" name="headerWidget">
+     <layout class="QVBoxLayout" name="headerLayout">
+      <property name="leftMargin">
+       <number>0</number>
+      </property>
+      <property name="topMargin">
+       <number>0</number>
+      </property>
+      <property name="rightMargin">
+       <number>0</number>
+      </property>
+      <property name="bottomMargin">
+       <number>0</number>
+      </property>
+      <property name="spacing">
+       <number>4</number>
+      </property>
+      <item>
+       <widget class="QLabel" name="lblTitle">
+        <property name="text">
+         <string>Statistiques</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLabel" name="lblSubtitle">
+        <property name="text">
+         <string>Gestion des Équipements</string>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </widget>
+   </item>
+   <item>
+    <layout class="QHBoxLayout" name="kpiRowLayout">
+     <property name="spacing">
+      <number>12</number>
+     </property>
+     <item>
+      <widget class="QFrame" name="cardKpiTotalMateriels">
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Expanding" vsizetype="Preferred"/>
+       </property>
+       <layout class="QHBoxLayout" name="layoutKpiTotalMateriels">
+        <property name="leftMargin">
+         <number>12</number>
+        </property>
+        <property name="topMargin">
+         <number>12</number>
+        </property>
+        <property name="rightMargin">
+         <number>12</number>
+        </property>
+        <property name="bottomMargin">
+         <number>12</number>
+        </property>
+        <property name="spacing">
+         <number>10</number>
+        </property>
+        <item>
+         <widget class="QLabel" name="lblKpiTotalMaterielsIcon">
+          <property name="minimumSize">
+           <size>
+            <width>48</width>
+            <height>48</height>
+           </size>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <layout class="QVBoxLayout" name="layoutKpiTotalMaterielsText">
+          <property name="spacing">
+           <number>4</number>
+          </property>
+          <item>
+           <widget class="QLabel" name="lblKpiTotalMaterielsTitle">
+            <property name="text">
+             <string>Total Matériels</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QLabel" name="lblKpiTotalMaterielsValue">
+            <property name="text">
+             <string>150</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QLabel" name="lblKpiTotalMaterielsBadge">
+            <property name="text">
+             <string>+5</string>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </item>
+       </layout>
+      </widget>
+     </item>
+     <item>
+      <widget class="QFrame" name="cardKpiEnPanne">
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Expanding" vsizetype="Preferred"/>
+       </property>
+       <layout class="QHBoxLayout" name="layoutKpiEnPanne">
+        <property name="leftMargin">
+         <number>12</number>
+        </property>
+        <property name="topMargin">
+         <number>12</number>
+        </property>
+        <property name="rightMargin">
+         <number>12</number>
+        </property>
+        <property name="bottomMargin">
+         <number>12</number>
+        </property>
+        <property name="spacing">
+         <number>10</number>
+        </property>
+        <item>
+         <widget class="QLabel" name="lblKpiEnPanneIcon">
+          <property name="minimumSize">
+           <size>
+            <width>48</width>
+            <height>48</height>
+           </size>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <layout class="QVBoxLayout" name="layoutKpiEnPanneText">
+          <property name="spacing">
+           <number>4</number>
+          </property>
+          <item>
+           <widget class="QLabel" name="lblKpiEnPanneTitle">
+            <property name="text">
+             <string>En Panne</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QLabel" name="lblKpiEnPanneValue">
+            <property name="text">
+             <string>12</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QLabel" name="lblKpiEnPanneBadge">
+            <property name="text">
+             <string>+2</string>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </item>
+       </layout>
+      </widget>
+     </item>
+     <item>
+      <widget class="QFrame" name="cardKpiMaintenance">
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Expanding" vsizetype="Preferred"/>
+       </property>
+       <layout class="QHBoxLayout" name="layoutKpiMaintenance">
+        <property name="leftMargin">
+         <number>12</number>
+        </property>
+        <property name="topMargin">
+         <number>12</number>
+        </property>
+        <property name="rightMargin">
+         <number>12</number>
+        </property>
+        <property name="bottomMargin">
+         <number>12</number>
+        </property>
+        <property name="spacing">
+         <number>10</number>
+        </property>
+        <item>
+         <widget class="QLabel" name="lblKpiMaintenanceIcon">
+          <property name="minimumSize">
+           <size>
+            <width>48</width>
+            <height>48</height>
+           </size>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <layout class="QVBoxLayout" name="layoutKpiMaintenanceText">
+          <property name="spacing">
+           <number>4</number>
+          </property>
+          <item>
+           <widget class="QLabel" name="lblKpiMaintenanceTitle">
+            <property name="text">
+             <string>En Maintenance</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QLabel" name="lblKpiMaintenanceValue">
+            <property name="text">
+             <string>8</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QLabel" name="lblKpiMaintenanceBadge">
+            <property name="text">
+             <string>-1</string>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </item>
+       </layout>
+      </widget>
+     </item>
+     <item>
+      <widget class="QFrame" name="cardKpiCout">
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Expanding" vsizetype="Preferred"/>
+       </property>
+       <layout class="QHBoxLayout" name="layoutKpiCout">
+        <property name="leftMargin">
+         <number>12</number>
+        </property>
+        <property name="topMargin">
+         <number>12</number>
+        </property>
+        <property name="rightMargin">
+         <number>12</number>
+        </property>
+        <property name="bottomMargin">
+         <number>12</number>
+        </property>
+        <property name="spacing">
+         <number>10</number>
+        </property>
+        <item>
+         <widget class="QLabel" name="lblKpiCoutIcon">
+          <property name="minimumSize">
+           <size>
+            <width>48</width>
+            <height>48</height>
+           </size>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <layout class="QVBoxLayout" name="layoutKpiCoutText">
+          <property name="spacing">
+           <number>4</number>
+          </property>
+          <item>
+           <widget class="QLabel" name="lblKpiCoutTitle">
+            <property name="text">
+             <string>Coût Réparation</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QLabel" name="lblKpiCoutValue">
+            <property name="text">
+             <string>45k</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QLabel" name="lblKpiCoutBadge">
+            <property name="text">
+             <string>+5k</string>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </item>
+       </layout>
+      </widget>
+     </item>
+    </layout>
+   </item>
+   <item>
+    <layout class="QHBoxLayout" name="chartsRowLayout">
+     <property name="spacing">
+      <number>12</number>
+     </property>
+     <item>
+      <widget class="QFrame" name="cardChartLine">
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Expanding" vsizetype="Expanding"/>
+       </property>
+       <layout class="QVBoxLayout" name="layoutChartLine">
+        <property name="leftMargin">
+         <number>12</number>
+        </property>
+        <property name="topMargin">
+         <number>12</number>
+        </property>
+        <property name="rightMargin">
+         <number>12</number>
+        </property>
+        <property name="bottomMargin">
+         <number>12</number>
+        </property>
+        <property name="spacing">
+         <number>8</number>
+        </property>
+        <item>
+         <layout class="QHBoxLayout" name="layoutChartLineHeader">
+          <property name="spacing">
+           <number>6</number>
+          </property>
+          <item>
+           <widget class="QLabel" name="lblChartLineIcon">
+            <property name="minimumSize">
+             <size>
+              <width>24</width>
+              <height>24</height>
+             </size>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QLabel" name="lblChartLineTitle">
+            <property name="text">
+             <string>Évolution des Pannes</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <spacer name="spacerChartLineHeader">
+            <property name="orientation">
+             <enum>Qt::Horizontal</enum>
+            </property>
+            <property name="sizeHint" stdset="0">
+             <size>
+              <width>48</width>
+              <height>24</height>
+             </size>
+            </property>
+           </spacer>
+          </item>
+         </layout>
+        </item>
+        <item>
+         <widget class="QWidget" name="chartLineContainer">
+          <property name="minimumHeight">
+           <number>220</number>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+     </item>
+     <item>
+      <layout class="QVBoxLayout" name="chartsRightLayout">
+       <property name="spacing">
+        <number>12</number>
+       </property>
+       <item>
+        <widget class="QFrame" name="cardChartDonut">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Preferred" vsizetype="Expanding"/>
+         </property>
+         <layout class="QVBoxLayout" name="layoutChartDonut">
+          <property name="leftMargin">
+           <number>12</number>
+          </property>
+          <property name="topMargin">
+           <number>12</number>
+          </property>
+          <property name="rightMargin">
+           <number>12</number>
+          </property>
+          <property name="bottomMargin">
+           <number>12</number>
+          </property>
+          <property name="spacing">
+           <number>8</number>
+          </property>
+          <item>
+           <layout class="QHBoxLayout" name="layoutChartDonutHeader">
+            <property name="spacing">
+             <number>6</number>
+            </property>
+            <item>
+             <widget class="QLabel" name="lblChartDonutIcon">
+              <property name="minimumSize">
+               <size>
+                <width>24</width>
+                <height>24</height>
+               </size>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QLabel" name="lblChartDonutTitle">
+              <property name="text">
+               <string>État Global</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <spacer name="spacerChartDonutHeader">
+              <property name="orientation">
+               <enum>Qt::Horizontal</enum>
+              </property>
+              <property name="sizeHint" stdset="0">
+               <size>
+                <width>24</width>
+                <height>24</height>
+               </size>
+              </property>
+             </spacer>
+            </item>
+           </layout>
+          </item>
+          <item>
+           <widget class="QWidget" name="chartDonutContainer">
+            <property name="minimumHeight">
+             <number>150</number>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </widget>
+       </item>
+       <item>
+        <widget class="QFrame" name="cardChartBar">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Preferred" vsizetype="Expanding"/>
+         </property>
+         <layout class="QVBoxLayout" name="layoutChartBar">
+          <property name="leftMargin">
+           <number>12</number>
+          </property>
+          <property name="topMargin">
+           <number>12</number>
+          </property>
+          <property name="rightMargin">
+           <number>12</number>
+          </property>
+          <property name="bottomMargin">
+           <number>12</number>
+          </property>
+          <property name="spacing">
+           <number>8</number>
+          </property>
+          <item>
+           <layout class="QHBoxLayout" name="layoutChartBarHeader">
+            <property name="spacing">
+             <number>6</number>
+            </property>
+            <item>
+             <widget class="QLabel" name="lblChartBarIcon">
+              <property name="minimumSize">
+               <size>
+                <width>24</width>
+                <height>24</height>
+               </size>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QLabel" name="lblChartBarTitle">
+              <property name="text">
+               <string>Matériel par Terminal</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <spacer name="spacerChartBarHeader">
+              <property name="orientation">
+               <enum>Qt::Horizontal</enum>
+              </property>
+              <property name="sizeHint" stdset="0">
+               <size>
+                <width>24</width>
+                <height>24</height>
+               </size>
+              </property>
+             </spacer>
+            </item>
+           </layout>
+          </item>
+          <item>
+           <widget class="QWidget" name="chartBarContainer">
+            <property name="minimumHeight">
+             <number>150</number>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </widget>
+       </item>
+      </layout>
+     </item>
+    </layout>
+   </item>
+   <item>
+    <layout class="QHBoxLayout" name="bottomLayout">
+     <property name="spacing">
+      <number>12</number>
+     </property>
+     <item>
+      <widget class="QFrame" name="cardBottomBar">
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Expanding" vsizetype="Expanding"/>
+       </property>
+       <layout class="QVBoxLayout" name="layoutBottomBar">
+        <property name="leftMargin">
+         <number>12</number>
+        </property>
+        <property name="topMargin">
+         <number>12</number>
+        </property>
+        <property name="rightMargin">
+         <number>12</number>
+        </property>
+        <property name="bottomMargin">
+         <number>12</number>
+        </property>
+        <property name="spacing">
+         <number>8</number>
+        </property>
+        <item>
+         <layout class="QHBoxLayout" name="layoutBottomBarHeader">
+          <property name="spacing">
+           <number>6</number>
+          </property>
+          <item>
+           <widget class="QLabel" name="lblBottomBarIcon">
+            <property name="minimumSize">
+             <size>
+              <width>24</width>
+              <height>24</height>
+             </size>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QLabel" name="lblBottomBarTitle">
+            <property name="text">
+             <string>Interventions (Semaine Actuelle)</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <spacer name="spacerBottomBarHeader">
+            <property name="orientation">
+             <enum>Qt::Horizontal</enum>
+            </property>
+            <property name="sizeHint" stdset="0">
+             <size>
+              <width>24</width>
+              <height>24</height>
+             </size>
+            </property>
+           </spacer>
+          </item>
+         </layout>
+        </item>
+        <item>
+         <widget class="QWidget" name="chartBottomBarContainer">
+          <property name="minimumHeight">
+           <number>200</number>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+     </item>
+     <item>
+      <widget class="QFrame" name="cardRecentTable">
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Expanding" vsizetype="Expanding"/>
+       </property>
+       <layout class="QVBoxLayout" name="layoutRecentTable">
+        <property name="leftMargin">
+         <number>12</number>
+        </property>
+        <property name="topMargin">
+         <number>12</number>
+        </property>
+        <property name="rightMargin">
+         <number>12</number>
+        </property>
+        <property name="bottomMargin">
+         <number>12</number>
+        </property>
+        <property name="spacing">
+         <number>8</number>
+        </property>
+        <item>
+         <layout class="QHBoxLayout" name="layoutRecentHeader">
+          <property name="spacing">
+           <number>6</number>
+          </property>
+          <item>
+           <widget class="QLabel" name="lblRecentIcon">
+            <property name="minimumSize">
+             <size>
+              <width>24</width>
+              <height>24</height>
+             </size>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QLabel" name="lblRecentTitle">
+            <property name="text">
+             <string>Dernières Interventions</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <spacer name="spacerRecentHeader">
+            <property name="orientation">
+             <enum>Qt::Horizontal</enum>
+            </property>
+            <property name="sizeHint" stdset="0">
+             <size>
+              <width>48</width>
+              <height>24</height>
+             </size>
+            </property>
+           </spacer>
+          </item>
+          <item>
+           <widget class="QToolButton" name="btnFilter">
+            <property name="toolTip">
+             <string>Filtrer</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QToolButton" name="btnCalendar">
+            <property name="toolTip">
+             <string>Calendrier</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QToolButton" name="btnRefresh">
+            <property name="toolTip">
+             <string>Rafraîchir</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QToolButton" name="btnExport">
+            <property name="toolTip">
+             <string>Exporter</string>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </item>
+        <item>
+         <widget class="QTableWidget" name="tableRecent">
+          <property name="alternatingRowColors">
+           <bool>true</bool>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <layout class="QHBoxLayout" name="layoutVoirPlus">
+          <item>
+           <spacer name="spacerVoirPlus">
+            <property name="orientation">
+             <enum>Qt::Horizontal</enum>
+            </property>
+            <property name="sizeHint" stdset="0">
+             <size>
+              <width>48</width>
+              <height>24</height>
+             </size>
+            </property>
+           </spacer>
+          </item>
+          <item>
+           <widget class="QPushButton" name="btnVoirPlus">
+            <property name="text">
+             <string>Voir plus</string>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </item>
+       </layout>
+      </widget>
+     </item>
+    </layout>
+   </item>
+  </layout>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
