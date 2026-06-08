@@ -40,7 +40,7 @@ make
 
 Model download link: [Download Model](https://huggingface.co/AdamRh/faceid/tree/main)
 
-Once downloaded, place the model inside the `faceidd` directory.
+Once downloaded, place the model inside the `faceidd/models` directory.
 
 To install the ML module dependencies:
 ```bash
@@ -54,7 +54,12 @@ venv\Scripts\activate
 
 pip install -r requirements.txt
 
+cd ../gestion_chambres_froides/ai_engine
+
+pip install -r requirements.txt
 ```
+
+please read `faceidd/README.md` for more information.
 
 ### 3. Embedded & IoT Module (Arduino)
 
@@ -76,7 +81,6 @@ See the `.env` file for the required environment variables.
 ## Hardware & Wiring (IoT)
 
 * **[Bill of Materials (BOM)](docs/liste-materiel.md)**
-* **[Wiring Diagram](docs/schema-cablage.md)**
 
 ## Authors
 
